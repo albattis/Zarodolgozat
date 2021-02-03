@@ -16,7 +16,7 @@ namespace GotoStreet_1._0
     {
         public int userid { get; set; }
         public string city1 { get; set; }
-        public Nullable<int> zip { get; set; }
+        public int zip { get; set; }
         public string street { get; set; }
         public string place { get; set; }
         public string housenumber { get; set; }

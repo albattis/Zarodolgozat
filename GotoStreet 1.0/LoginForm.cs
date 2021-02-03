@@ -32,5 +32,10 @@ namespace GotoStreet_1._0
 
             }
         }
+
+        private void Escape_Button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

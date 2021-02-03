@@ -32,14 +32,21 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sugóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.felhasználóiKézikönyvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.engedélyezettKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elutasitottKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újKijárásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.munkáltatóiIgazolásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sugóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.felhasználóiKézikönyvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GotoStreet_Views = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Welcomae_Label = new System.Windows.Forms.Label();
             this.GotoStreetMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GotoStreet_Views)).BeginInit();
             this.SuspendLayout();
             // 
             // GotoStreetMenu
@@ -65,7 +72,7 @@
             // kilépésToolStripMenuItem
             // 
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.KilépésToolStripMenuItem_Click);
             // 
@@ -79,6 +86,32 @@
             this.kijárásokToolStripMenuItem.Name = "kijárásokToolStripMenuItem";
             this.kijárásokToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.kijárásokToolStripMenuItem.Text = "Kijárások";
+            // 
+            // engedélyezettKijárásokToolStripMenuItem
+            // 
+            this.engedélyezettKijárásokToolStripMenuItem.Name = "engedélyezettKijárásokToolStripMenuItem";
+            this.engedélyezettKijárásokToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.engedélyezettKijárásokToolStripMenuItem.Text = "Engedélyezett Kijárások";
+            this.engedélyezettKijárásokToolStripMenuItem.Click += new System.EventHandler(this.EngedélyezettKijárásokToolStripMenuItem_Click);
+            // 
+            // elutasitottKijárásokToolStripMenuItem
+            // 
+            this.elutasitottKijárásokToolStripMenuItem.Name = "elutasitottKijárásokToolStripMenuItem";
+            this.elutasitottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.elutasitottKijárásokToolStripMenuItem.Text = "Elutasitott Kijárások";
+            this.elutasitottKijárásokToolStripMenuItem.Click += new System.EventHandler(this.ElutasitottKijárásokToolStripMenuItem_Click);
+            // 
+            // újKijárásToolStripMenuItem
+            // 
+            this.újKijárásToolStripMenuItem.Name = "újKijárásToolStripMenuItem";
+            this.újKijárásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.újKijárásToolStripMenuItem.Text = "Új kijárás..";
+            // 
+            // munkáltatóiIgazolásToolStripMenuItem
+            // 
+            this.munkáltatóiIgazolásToolStripMenuItem.Name = "munkáltatóiIgazolásToolStripMenuItem";
+            this.munkáltatóiIgazolásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.munkáltatóiIgazolásToolStripMenuItem.Text = "Munkáltatói Igazolás";
             // 
             // sugóToolStripMenuItem
             // 
@@ -101,29 +134,52 @@
             this.felhasználóiKézikönyvToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.felhasználóiKézikönyvToolStripMenuItem.Text = "Felhasználói Kézikönyv";
             // 
-            // engedélyezettKijárásokToolStripMenuItem
+            // GotoStreet_Views
             // 
-            this.engedélyezettKijárásokToolStripMenuItem.Name = "engedélyezettKijárásokToolStripMenuItem";
-            this.engedélyezettKijárásokToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.engedélyezettKijárásokToolStripMenuItem.Text = "Engedélyezett Kijárások";
+            this.GotoStreet_Views.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GotoStreet_Views.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.GotoStreet_Views.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GotoStreet_Views.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.GotoStreet_Views.Location = new System.Drawing.Point(110, 124);
+            this.GotoStreet_Views.Name = "GotoStreet_Views";
+            this.GotoStreet_Views.Size = new System.Drawing.Size(522, 116);
+            this.GotoStreet_Views.TabIndex = 1;
             // 
-            // elutasitottKijárásokToolStripMenuItem
+            // Column1
             // 
-            this.elutasitottKijárásokToolStripMenuItem.Name = "elutasitottKijárásokToolStripMenuItem";
-            this.elutasitottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.elutasitottKijárásokToolStripMenuItem.Text = "Elutasitott Kijárások";
+            this.Column1.HeaderText = "Név";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // újKijárásToolStripMenuItem
+            // Column2
             // 
-            this.újKijárásToolStripMenuItem.Name = "újKijárásToolStripMenuItem";
-            this.újKijárásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.újKijárásToolStripMenuItem.Text = "Új kijárás..";
+            this.Column2.HeaderText = "Kijárás Ideje";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // munkáltatóiIgazolásToolStripMenuItem
+            // Column3
             // 
-            this.munkáltatóiIgazolásToolStripMenuItem.Name = "munkáltatóiIgazolásToolStripMenuItem";
-            this.munkáltatóiIgazolásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.munkáltatóiIgazolásToolStripMenuItem.Text = "Munkáltatói Igazolás";
+            this.Column3.HeaderText = "Kijárás Célja";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Státusz";
+            this.Column4.Name = "Column4";
+            // 
+            // Welcomae_Label
+            // 
+            this.Welcomae_Label.AutoSize = true;
+            this.Welcomae_Label.Font = new System.Drawing.Font("Arial", 18.25F);
+            this.Welcomae_Label.Location = new System.Drawing.Point(248, 46);
+            this.Welcomae_Label.Name = "Welcomae_Label";
+            this.Welcomae_Label.Size = new System.Drawing.Size(0, 28);
+            this.Welcomae_Label.TabIndex = 2;
             // 
             // UserInterface
             // 
@@ -131,12 +187,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Welcomae_Label);
+            this.Controls.Add(this.GotoStreet_Views);
             this.Controls.Add(this.GotoStreetMenu);
             this.MainMenuStrip = this.GotoStreetMenu;
             this.Name = "UserInterface";
             this.Text = "GotoStreet 1.0 (Felhasználói környezet.)";
             this.GotoStreetMenu.ResumeLayout(false);
             this.GotoStreetMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GotoStreet_Views)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +214,11 @@
         private System.Windows.Forms.ToolStripMenuItem sugóToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem felhasználóiKézikönyvToolStripMenuItem;
+        private System.Windows.Forms.DataGridView GotoStreet_Views;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label Welcomae_Label;
     }
 }
