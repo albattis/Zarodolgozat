@@ -45,6 +45,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Welcomae_Label = new System.Windows.Forms.Label();
+            this.Date_Label = new System.Windows.Forms.Label();
             this.GotoStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GotoStreet_Views)).BeginInit();
             this.SuspendLayout();
@@ -106,12 +107,14 @@
             this.újKijárásToolStripMenuItem.Name = "újKijárásToolStripMenuItem";
             this.újKijárásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.újKijárásToolStripMenuItem.Text = "Új kijárás..";
+            this.újKijárásToolStripMenuItem.Click += new System.EventHandler(this.ÚjKijárásToolStripMenuItem_Click);
             // 
             // munkáltatóiIgazolásToolStripMenuItem
             // 
             this.munkáltatóiIgazolásToolStripMenuItem.Name = "munkáltatóiIgazolásToolStripMenuItem";
             this.munkáltatóiIgazolásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.munkáltatóiIgazolásToolStripMenuItem.Text = "Munkáltatói Igazolás";
+            this.munkáltatóiIgazolásToolStripMenuItem.Click += new System.EventHandler(this.MunkáltatóiIgazolásToolStripMenuItem_Click);
             // 
             // sugóToolStripMenuItem
             // 
@@ -181,12 +184,22 @@
             this.Welcomae_Label.Size = new System.Drawing.Size(0, 28);
             this.Welcomae_Label.TabIndex = 2;
             // 
+            // Date_Label
+            // 
+            this.Date_Label.AutoSize = true;
+            this.Date_Label.Font = new System.Drawing.Font("Arial", 15.75F);
+            this.Date_Label.Location = new System.Drawing.Point(178, 364);
+            this.Date_Label.Name = "Date_Label";
+            this.Date_Label.Size = new System.Drawing.Size(0, 24);
+            this.Date_Label.TabIndex = 3;
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Date_Label);
             this.Controls.Add(this.Welcomae_Label);
             this.Controls.Add(this.GotoStreet_Views);
             this.Controls.Add(this.GotoStreetMenu);
@@ -220,5 +233,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label Welcomae_Label;
+        private System.Windows.Forms.Label Date_Label;
     }
 }

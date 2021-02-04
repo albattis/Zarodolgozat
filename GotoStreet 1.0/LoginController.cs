@@ -8,8 +8,8 @@ namespace GotoStreet_1._0
 {
     class LoginController
     {
-        PasswordHash PH = new PasswordHash();
-        GotoStreetError Error = new GotoStreetError();
+       readonly PasswordHash PH = new PasswordHash();
+       readonly GotoStreetError Error = new GotoStreetError();
 
 
         private int Ids { get; set; }
@@ -23,33 +23,38 @@ namespace GotoStreet_1._0
         public string Username { get { return Usernames; } set { Usernames = value; } }
 
 
-        public bool Login(string id,string password)
+        public bool Login(string id, string password)
 
         {
-            string passwords=null;
+            string passwords = null;
             var context = new gotoStreetEntities();
             foreach (var item in context.user)
             {
                 if (item.Id.Equals(int.Parse(id)))
                 {
                     passwords = item.password;
+                    Data = true;
                 }
-                
+
 
             }
-            Data = false;
-            string ControlPassword=PH.sha256(password);
-
-            if (ControlPassword.Equals(passwords))
+            if (Data)
             {
-                Data = true;
-            }
-            else
-            {
-                Error.PasswordError();
-            }
+                Data = false;
+                string ControlPassword = PH.sha256(password);
 
-            return Data;
+                if (ControlPassword.Equals(passwords))
+                {
+                    Data = true;
+                }
+                else
+                {
+                    Error.PasswordError();
+                }
+
+                return Data;
+            }
+            else { Error.LoginnameError(); return false; }
         }
 
     }

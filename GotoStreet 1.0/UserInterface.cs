@@ -6,9 +6,9 @@ namespace GotoStreet_1._0
     public partial class UserInterface : Form
     {
 
-        GotoStreetUser LogUser = new GotoStreetUser();
+      readonly  GotoStreetUser LogUser = new GotoStreetUser();
 
-        private int id;
+        private readonly int id;
 
         public UserInterface(int ids)
         {
@@ -16,6 +16,8 @@ namespace GotoStreet_1._0
             id = ids;
             UserSettings();
             Welcomae_Label.Text = "Üdvözöllek Kedves "+LogUser.Firstnames+" "+LogUser.Lastnames;
+            Date_Label.Text = "Bejelentkezés ideje:"+ DateTime.Now.ToString();
+        
         }
 
         private void UserSettings()
@@ -69,6 +71,17 @@ namespace GotoStreet_1._0
         {
             GotoStreet_Views.Rows.Clear();
             GotoStreet_View("elutasitva");
+        }
+
+        private void ÚjKijárásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGotoStreet Ngs = new NewGotoStreet(LogUser.Firstnames,LogUser.Lastnames,id);
+            Ngs.Show();
+        }
+
+        private void MunkáltatóiIgazolásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

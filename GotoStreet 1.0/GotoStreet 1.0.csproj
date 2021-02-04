@@ -58,6 +58,13 @@
     <Compile Include="city.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="GotoStreet_Controller.cs" />
+    <Compile Include="NewGotoStreet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGotoStreet.Designer.cs">
+      <DependentUpon>NewGotoStreet.cs</DependentUpon>
+    </Compile>
     <Compile Include="gotoStreet.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
@@ -76,7 +83,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GotoStreetDataBase.edmx</DependentUpon>
     </Compile>
-    <Compile Include="GotoStreetErrors.cs" />
+    <Compile Include="IGotoStreetErrors.cs" />
     <Compile Include="GotoStreetUser.cs" />
     <Compile Include="LoginController.cs" />
     <Compile Include="LoginForm.cs">
@@ -102,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGotoStreet.resx">
+      <DependentUpon>NewGotoStreet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -12,7 +12,7 @@ namespace GotoStreet_1._0
 {
     public partial class LoginForm : Form
     {
-        LoginController LC = new LoginController();
+       readonly LoginController LC = new LoginController();
         private bool Data = false;
         public LoginForm()
         {
