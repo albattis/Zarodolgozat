@@ -142,7 +142,6 @@
             this.GotoStreet_Views.Name = "GotoStreet_Views";
             this.GotoStreet_Views.Size = new System.Drawing.Size(522, 116);
             this.GotoStreet_Views.TabIndex = 1;
-            this.GotoStreet_Views.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GotoStreet_Views_CellContentClick);
             // 
             // Column1
             // 

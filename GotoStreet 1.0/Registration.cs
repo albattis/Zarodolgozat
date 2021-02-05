@@ -102,6 +102,7 @@ namespace GotoStreet_1._0
         public Registration()
         {
             InitializeComponent();
+            Button_back.Visible = false;
         }
 
         private void Registration_button_Click(object sender, EventArgs e)
@@ -113,12 +114,20 @@ namespace GotoStreet_1._0
                     Error.Successfull_Registration();
                     ListBox_Success.Items.Add("Felhasználónév: " + ID);
                     ListBox_Success.Items.Add("Jelszó: " + TextBox_password.Text);
+                    Button_back.Visible = true;
+                    Registration_button.Visible = false;
+                    Escape_button.Visible = false;
                 }
             }
 
         }
 
         private void Escape_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_back_Click(object sender, EventArgs e)
         {
             this.Close();
         }

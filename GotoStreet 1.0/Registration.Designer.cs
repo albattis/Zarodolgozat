@@ -53,6 +53,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ListBox_Success = new System.Windows.Forms.ListBox();
+            this.Button_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Firstname_label
@@ -199,7 +200,7 @@
             // 
             // TextBox_repassword
             // 
-            this.TextBox_repassword.Location = new System.Drawing.Point(473, 187);
+            this.TextBox_repassword.Location = new System.Drawing.Point(467, 141);
             this.TextBox_repassword.Name = "TextBox_repassword";
             this.TextBox_repassword.PasswordChar = '@';
             this.TextBox_repassword.Size = new System.Drawing.Size(138, 20);
@@ -207,7 +208,7 @@
             // 
             // TextBox_password
             // 
-            this.TextBox_password.Location = new System.Drawing.Point(473, 150);
+            this.TextBox_password.Location = new System.Drawing.Point(467, 104);
             this.TextBox_password.Name = "TextBox_password";
             this.TextBox_password.PasswordChar = '@';
             this.TextBox_password.Size = new System.Drawing.Size(138, 20);
@@ -216,7 +217,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(366, 190);
+            this.label2.Location = new System.Drawing.Point(360, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 18;
@@ -225,7 +226,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(366, 157);
+            this.label3.Location = new System.Drawing.Point(360, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 17;
@@ -234,7 +235,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(375, 232);
+            this.label4.Location = new System.Drawing.Point(369, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(219, 13);
             this.label4.TabIndex = 21;
@@ -261,10 +262,20 @@
             // ListBox_Success
             // 
             this.ListBox_Success.FormattingEnabled = true;
-            this.ListBox_Success.Location = new System.Drawing.Point(437, 277);
+            this.ListBox_Success.Location = new System.Drawing.Point(445, 238);
             this.ListBox_Success.Name = "ListBox_Success";
             this.ListBox_Success.Size = new System.Drawing.Size(120, 95);
             this.ListBox_Success.TabIndex = 24;
+            // 
+            // Button_back
+            // 
+            this.Button_back.Location = new System.Drawing.Point(464, 390);
+            this.Button_back.Name = "Button_back";
+            this.Button_back.Size = new System.Drawing.Size(124, 48);
+            this.Button_back.TabIndex = 25;
+            this.Button_back.Text = "Vissza";
+            this.Button_back.UseVisualStyleBackColor = true;
+            this.Button_back.Click += new System.EventHandler(this.Button_back_Click);
             // 
             // Registration
             // 
@@ -272,6 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(635, 450);
+            this.Controls.Add(this.Button_back);
             this.Controls.Add(this.ListBox_Success);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -331,5 +343,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox ListBox_Success;
+        private System.Windows.Forms.Button Button_back;
     }
 }

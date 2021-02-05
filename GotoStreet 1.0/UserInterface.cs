@@ -16,7 +16,7 @@ namespace GotoStreet_1._0
             id = ids;
             UserSettings();
             Welcomae_Label.Text = "Üdvözöllek Kedves "+LogUser.Firstnames+" "+LogUser.Lastnames;
-            Date_Label.Text = "Bejelentkezés ideje:"+ DateTime.Now.ToString();
+            Date_Label.Text = "Bejelentkezés ideje:  "+ DateTime.Now.ToString();
         
         }
 
