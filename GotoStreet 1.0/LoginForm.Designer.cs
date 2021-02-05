@@ -35,6 +35,7 @@
             this.Password_Label = new System.Windows.Forms.Label();
             this.Login_Button = new System.Windows.Forms.Button();
             this.Escape_Button = new System.Windows.Forms.Button();
+            this.Registration = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -97,7 +98,7 @@
             // Login_Button
             // 
             this.Login_Button.Font = new System.Drawing.Font("Arial", 12.25F);
-            this.Login_Button.Location = new System.Drawing.Point(200, 258);
+            this.Login_Button.Location = new System.Drawing.Point(232, 258);
             this.Login_Button.Name = "Login_Button";
             this.Login_Button.Size = new System.Drawing.Size(226, 45);
             this.Login_Button.TabIndex = 5;
@@ -116,12 +117,24 @@
             this.Escape_Button.UseVisualStyleBackColor = true;
             this.Escape_Button.Click += new System.EventHandler(this.Escape_Button_Click);
             // 
+            // Registration
+            // 
+            this.Registration.Font = new System.Drawing.Font("Arial", 12.25F);
+            this.Registration.Location = new System.Drawing.Point(25, 258);
+            this.Registration.Name = "Registration";
+            this.Registration.Size = new System.Drawing.Size(140, 45);
+            this.Registration.TabIndex = 7;
+            this.Registration.Text = "Regisztráció";
+            this.Registration.UseVisualStyleBackColor = true;
+            this.Registration.Click += new System.EventHandler(this.Registration_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(706, 330);
+            this.Controls.Add(this.Registration);
             this.Controls.Add(this.Escape_Button);
             this.Controls.Add(this.Login_Button);
             this.Controls.Add(this.Password_Label);
@@ -145,6 +158,7 @@
         private System.Windows.Forms.Label Password_Label;
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.Button Escape_Button;
+        private System.Windows.Forms.Button Registration;
     }
 }
 

@@ -37,5 +37,11 @@ namespace GotoStreet_1._0
         {
             Application.Exit();
         }
+
+        private void Registration_Click(object sender, EventArgs e)
+        {
+            Registration Reg = new Registration();
+                Reg.Show();
+        }
     }
 }

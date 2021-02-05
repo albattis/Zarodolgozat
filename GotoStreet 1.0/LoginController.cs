@@ -30,7 +30,7 @@ namespace GotoStreet_1._0
             var context = new gotoStreetEntities();
             foreach (var item in context.user)
             {
-                if (item.Id.Equals(int.Parse(id)))
+                if (item.userid.Equals(int.Parse(id)))
                 {
                     passwords = item.password;
                     Data = true;

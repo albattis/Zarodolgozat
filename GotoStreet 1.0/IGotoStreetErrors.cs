@@ -39,5 +39,43 @@ namespace GotoStreet_1._0
         public void TryingError() {
             MessageBox.Show("Nem megfelelö indokot választott,vagy elirási hiba lépett fel", "Kijárási cél Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        internal void PasswordContainsError()
+        {
+            MessageBox.Show("Nem egyezik a két jelszó.", "Jelszó Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal void PasswordLenghtError()
+        {
+            MessageBox.Show("Nem elég hosszó a jelszó.", "Jelszó Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void Registration_nameError()
+        {
+            MessageBox.Show("Nem töltötte ki a név mezö(ket).", "Regisztráció Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void Registration_cityError()
+        {
+            MessageBox.Show("Nem töltött ki minden mezöt a lakcimre vonatkozóan.", "Regisztráció Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal void Registration_formatError()
+        {
+            MessageBox.Show("Nem megfelelöen töltötte ki a mezőket.", "Regisztráció Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        internal void Registration_Error()
+        {
+            MessageBox.Show("Hiba lépet fel az adatmetés közben.", "Regisztráció Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        internal void Successfull_Registration()
+        {
+            MessageBox.Show("Sikeres Regisztráció.", "Regisztráció", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
     }
 }

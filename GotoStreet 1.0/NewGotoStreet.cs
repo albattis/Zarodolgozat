@@ -43,7 +43,7 @@ namespace GotoStreet_1._0
                     context.SaveChanges();
 
                 }
-                catch (SqlException) { MessageBox.Show("E", "b", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                catch (SqlException) { }
             
         }
         private void Escape_Click(object sender, EventArgs e)

@@ -5,11 +5,11 @@ namespace GotoStreet_1._0
 {
     class GotoStreet_Controller
     {
-        private string[] Ok = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
+        private readonly string[] Ok = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
         private readonly GotoStreetError error = new GotoStreetError();
         private readonly DateTime Date;
         private readonly string trying;
-        
+
         private readonly int id;
 
 
@@ -28,7 +28,7 @@ namespace GotoStreet_1._0
             return data;
 
         }
-        public GotoStreet_Controller(int ids,DateTime dateTime,string trys)
+        public GotoStreet_Controller(int ids, DateTime dateTime, string trys)
         {
             trying = trys;
             id = ids;
@@ -42,7 +42,7 @@ namespace GotoStreet_1._0
             {
                 return true;
             }
-            else { error.DateError(); return false;  }
+            else { error.DateError(); return false; }
         }
 
         private bool CheckGo()
@@ -55,13 +55,13 @@ namespace GotoStreet_1._0
                 { Count++; }
             }
             if (Count > 0)
-            { error.GotoStreetErrors(); return false;  }
+            { error.GotoStreetErrors(); return false; }
             else { return true; }
         }
 
         public bool FullCheck()
         {
-            if (CheckDate() && CheckGo()&&CheckTry())
+            if (CheckDate() && CheckGo() && CheckTry())
             { return true; }
             else { return false; }
         }

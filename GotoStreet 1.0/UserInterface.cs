@@ -79,7 +79,7 @@ namespace GotoStreet_1._0
             Ngs.Show();
         }
 
-        private void MunkáltatóiIgazolásToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GotoStreet_Views_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
