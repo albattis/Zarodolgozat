@@ -5,7 +5,7 @@ namespace GotoStreet_1._0
     class PasswordHash
     {
 
-        public string sha256(string randomString)
+        public string Sha256(string randomString)
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
             var hash = new System.Text.StringBuilder();

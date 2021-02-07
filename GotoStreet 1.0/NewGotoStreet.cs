@@ -6,7 +6,7 @@ namespace GotoStreet_1._0
 {
     public partial class NewGotoStreet : Form
     {
-        
+       private readonly GotoStreetError Error = new GotoStreetError();
         private readonly int id;
 
         public NewGotoStreet(string fn, string ln, int ids)
@@ -41,7 +41,7 @@ namespace GotoStreet_1._0
                     var context = new gotoStreetEntities();
                     context.gotoStreet.Add(gt);
                     context.SaveChanges();
-
+                Error.Sucessfull_go();   
                 }
                 catch (SqlException) { }
             

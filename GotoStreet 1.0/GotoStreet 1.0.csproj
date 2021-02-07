@@ -59,6 +59,13 @@
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="GotoStreet_Controller.cs" />
+    <Compile Include="Help\GotoStreetHelp.cs" />
+    <Compile Include="Help\GotoStreetHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\GotoStreetHelpForm.Designer.cs">
+      <DependentUpon>GotoStreetHelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewGotoStreet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +120,9 @@
     <Compile Include="UserInterface.Designer.cs">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Help\GotoStreetHelpForm.resx">
+      <DependentUpon>GotoStreetHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Help\img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

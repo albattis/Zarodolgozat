@@ -31,6 +31,11 @@ namespace GotoStreet_1._0
             MessageBox.Show("Nem megfelelö dátumot adott meg.", "Beviteli Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        internal void FileNootFound()
+        {
+            MessageBox.Show("Nem sikerült a képet megjelenteni.", "Beolvasási kisérlet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public void GotoStreetErrors()
         {
             MessageBox.Show("Nem lehet a megadott napra kijárást rögziteni.", "Rögzitési Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -74,8 +79,12 @@ namespace GotoStreet_1._0
 
         internal void Successfull_Registration()
         {
-            MessageBox.Show("Sikeres Regisztráció.", "Regisztráció", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Sikeres Regisztráció.", "Regisztráció", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        public void Sucessfull_go()
+        {
+            MessageBox.Show("Sikeres Kijárási kérelem.", "Kijárás", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

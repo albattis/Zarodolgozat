@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,8 @@ namespace GotoStreet_1._0
     public partial class Registration : Form
     {
 
-        GotoStreetError Error = new GotoStreetError();
-        PasswordHash Ph = new PasswordHash();
+       private readonly GotoStreetError Error = new GotoStreetError();
+       private readonly PasswordHash Ph = new PasswordHash();
 
         private string password;
         private int ID;
@@ -42,7 +43,7 @@ namespace GotoStreet_1._0
             {
                 if (TextBox_password.Text.Length > 7)
                 {
-                    password = Ph.sha256(TextBox_password.Text);
+                    password = Ph.Sha256(TextBox_password.Text);
                     return true;
                 }
                 else 
@@ -91,7 +92,7 @@ namespace GotoStreet_1._0
                 return true;
             }
             catch (FormatException) { Error.Registration_formatError(); return false; }
-            catch (Exception e)
+            catch (DivideByZeroException e)
             { Console.WriteLine( e.Message);  Error.Registration_Error(); return false; }
 
 

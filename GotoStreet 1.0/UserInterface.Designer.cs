@@ -121,12 +121,14 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
             // felhasználóiKézikönyvToolStripMenuItem
             // 
             this.felhasználóiKézikönyvToolStripMenuItem.Name = "felhasználóiKézikönyvToolStripMenuItem";
             this.felhasználóiKézikönyvToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.felhasználóiKézikönyvToolStripMenuItem.Text = "Felhasználói Kézikönyv";
+            this.felhasználóiKézikönyvToolStripMenuItem.Click += new System.EventHandler(this.FelhasználóiKézikönyvToolStripMenuItem_Click);
             // 
             // GotoStreet_Views
             // 

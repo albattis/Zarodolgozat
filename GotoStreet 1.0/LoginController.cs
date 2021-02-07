@@ -41,7 +41,7 @@ namespace GotoStreet_1._0
             if (Data)
             {
                 Data = false;
-                string ControlPassword = PH.sha256(password);
+                string ControlPassword = PH.Sha256(password);
 
                 if (ControlPassword.Equals(passwords))
                 {

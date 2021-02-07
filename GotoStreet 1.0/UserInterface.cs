@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using GotoStreet_1._0.Help;
 
 namespace GotoStreet_1._0
 {
@@ -79,9 +80,15 @@ namespace GotoStreet_1._0
             Ngs.Show();
         }
 
-        private void GotoStreet_Views_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FelhasználóiKézikönyvToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GotoStreetHelpForm Help = new GotoStreetHelpForm();
+            Help.Show();
         }
     }
 }
