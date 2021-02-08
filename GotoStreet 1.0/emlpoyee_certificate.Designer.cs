@@ -60,7 +60,7 @@
             this.button_exit.TabIndex = 2;
             this.button_exit.Text = "Kilépés";
             this.button_exit.UseVisualStyleBackColor = true;
-            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
+            this.button_exit.Click += new System.EventHandler(this.Button_exit_Click);
             // 
             // button_print
             // 
@@ -70,11 +70,11 @@
             this.button_print.TabIndex = 3;
             this.button_print.Text = "Nyomtatás";
             this.button_print.UseVisualStyleBackColor = true;
-            this.button_print.Click += new System.EventHandler(this.button_print_Click);
+            this.button_print.Click += new System.EventHandler(this.Button_print_Click);
             // 
             // printDocument1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument1_PrintPage);
             // 
             // emlpoyee_certificate
             // 

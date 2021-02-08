@@ -29,7 +29,6 @@ namespace GotoStreet_1._0.Help
         {
             try
             {
-                // GotoStreetPictureBox.Image = Image.FromFile(path);
                 FileStream fs = new System.IO.FileStream(path, FileMode.Open, FileAccess.Read);
                 GotoStreetPictureBox.Image = Image.FromStream(fs);
                 fs.Close();

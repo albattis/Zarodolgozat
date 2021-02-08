@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="policeusersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="errors">
+          <Key>
+            <PropertyRef Name="bejegyzes_Id" />
+          </Key>
+          <Property Name="bejegyzes_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="error" Type="varchar" MaxLength="50" />
+          <Property Name="id" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="puser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="employee" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="officeid" Type="int" />
+        </EntityType>
+        <EntityType Name="pworks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" />
+          <Property Name="work" Type="varchar" MaxLength="50" />
+          <Property Name="login_date" Type="datetime" />
+          <Property Name="logintimehour" Type="int" />
+          <Property Name="loginexithour" Type="int" />
+        </EntityType>
+        <EntityContainer Name="policeusersModelStoreContainer">
+          <EntitySet Name="errors" EntityType="Self.errors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="puser" EntityType="Self.puser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pworks" EntityType="Self.pworks" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="policeusersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="errors">
+          <Key>
+            <PropertyRef Name="bejegyzes_Id" />
+          </Key>
+          <Property Name="bejegyzes_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="error" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="puser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="officeid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="pworks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="login_date" Type="DateTime" Precision="3" />
+          <Property Name="logintimehour" Type="Int32" />
+          <Property Name="loginexithour" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="policeusersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="errors" EntityType="Self.errors" />
+          <EntitySet Name="puser" EntityType="Self.puser" />
+          <EntitySet Name="pworks" EntityType="Self.pworks" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="policeusersModelStoreContainer" CdmEntityContainer="policeusersEntities">
+          <EntitySetMapping Name="errors">
+            <EntityTypeMapping TypeName="policeusersModel.errors">
+              <MappingFragment StoreEntitySet="errors">
+                <ScalarProperty Name="bejegyzes_Id" ColumnName="bejegyzes_Id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="puser">
+            <EntityTypeMapping TypeName="policeusersModel.puser">
+              <MappingFragment StoreEntitySet="puser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="employee" ColumnName="employee" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="officeid" ColumnName="officeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pworks">
+            <EntityTypeMapping TypeName="policeusersModel.pworks">
+              <MappingFragment StoreEntitySet="pworks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="work" ColumnName="work" />
+                <ScalarProperty Name="login_date" ColumnName="login_date" />
+                <ScalarProperty Name="logintimehour" ColumnName="logintimehour" />
+                <ScalarProperty Name="loginexithour" ColumnName="loginexithour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
