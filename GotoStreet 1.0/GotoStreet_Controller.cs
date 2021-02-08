@@ -48,7 +48,7 @@ namespace GotoStreet_1._0
         private bool CheckGo()
         {
             int Count = 0;
-            var context = new gotoStreetEntities();
+            var context = new gotoStreetEntities1();
             foreach (var item in context.gotoStreet)
             {
                 if (item.userid.Equals(id) && item.go_date.Equals(Date))

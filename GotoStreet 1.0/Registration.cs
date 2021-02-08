@@ -60,7 +60,7 @@ namespace GotoStreet_1._0
         { 
             try
             {
-                var context = new gotoStreetEntities();
+                var context = new gotoStreetEntities1();
                 ID = context.user.Count() + 1;
                 user user = new user
                 {

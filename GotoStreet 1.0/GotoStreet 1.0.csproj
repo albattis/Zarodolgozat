@@ -55,22 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authenticated_user.cs">
+      <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="city.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="GotoStreet_Controller.cs" />
-    <Compile Include="Help\GotoStreetHelp.cs" />
-    <Compile Include="Help\GotoStreetHelpForm.cs">
+    <Compile Include="Company.cs">
+      <DependentUpon>employee_certificate_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="emlpoyee_certificate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Help\GotoStreetHelpForm.Designer.cs">
-      <DependentUpon>GotoStreetHelpForm.cs</DependentUpon>
+    <Compile Include="emlpoyee_certificate.Designer.cs">
+      <DependentUpon>emlpoyee_certificate.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewGotoStreet.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Emlpoye_Certificate.cs">
+      <DependentUpon>employee_certificate_entity.tt</DependentUpon>
     </Compile>
-    <Compile Include="NewGotoStreet.Designer.cs">
-      <DependentUpon>NewGotoStreet.cs</DependentUpon>
+    <Compile Include="employee_certificate_entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employee_certificate_entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employee_certificate_entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employee_certificate_entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="employee_certificate_entity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>employee_certificate_entity.edmx</DependentUpon>
     </Compile>
     <Compile Include="gotoStreet.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
@@ -89,6 +105,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GotoStreetDataBase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GotoStreet_Controller.cs" />
+    <Compile Include="Help\GotoStreetHelp.cs" />
+    <Compile Include="Help\GotoStreetHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help\GotoStreetHelpForm.Designer.cs">
+      <DependentUpon>GotoStreetHelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewGotoStreet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGotoStreet.Designer.cs">
+      <DependentUpon>NewGotoStreet.cs</DependentUpon>
     </Compile>
     <Compile Include="IGotoStreetErrors.cs" />
     <Compile Include="GotoStreetUser.cs" />
@@ -120,6 +150,9 @@
     <Compile Include="UserInterface.Designer.cs">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="emlpoyee_certificate.resx">
+      <DependentUpon>emlpoyee_certificate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Help\GotoStreetHelpForm.resx">
       <DependentUpon>GotoStreetHelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +177,13 @@
     <EmbeddedResource Include="UserInterface.resx">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="employee_certificate_entity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>employee_certificate_entity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="employee_certificate_entity.edmx.diagram">
+      <DependentUpon>employee_certificate_entity.edmx</DependentUpon>
+    </None>
     <EntityDeploy Include="GotoStreetDataBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GotoStreetDataBase.Designer.cs</LastGenOutput>
@@ -166,10 +206,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="employee_certificate_entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>employee_certificate_entity.edmx</DependentUpon>
+      <LastGenOutput>employee_certificate_entity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="employee_certificate_entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>employee_certificate_entity.edmx</DependentUpon>
+      <LastGenOutput>employee_certificate_entity.cs</LastGenOutput>
+    </Content>
     <Content Include="GotoStreetDataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GotoStreetDataBase.Context.cs</LastGenOutput>
       <DependentUpon>GotoStreetDataBase.edmx</DependentUpon>
+      <LastGenOutput>GotoStreetDataBase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="GotoStreetDataBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

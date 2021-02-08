@@ -13,10 +13,10 @@ namespace GotoStreet_1._0
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gotoStreetEntities1 : DbContext
+    public partial class Company_registerEntities : DbContext
     {
-        public gotoStreetEntities1()
-            : base("name=gotoStreetEntities1")
+        public Company_registerEntities()
+            : base("name=Company_registerEntities")
         {
         }
     
@@ -25,10 +25,7 @@ namespace GotoStreet_1._0
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Authenticated_user> Authenticated_user { get; set; }
-        public virtual DbSet<city> city { get; set; }
-        public virtual DbSet<gotoStreet> gotoStreet { get; set; }
-        public virtual DbSet<police> police { get; set; }
-        public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<Emlpoye_Certificate> Emlpoye_Certificate { get; set; }
     }
 }

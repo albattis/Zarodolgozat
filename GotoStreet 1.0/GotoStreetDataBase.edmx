@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="gotoStreetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authenticated_user">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="Mother_name" Type="varchar" MaxLength="50" />
+          <Property Name="Birth_date" Type="date" />
+          <Property Name="ICN" Type="varchar" MaxLength="8" />
+        </EntityType>
         <EntityType Name="city">
           <Key>
             <PropertyRef Name="userid" />
@@ -72,6 +81,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="gotoStreetModelStoreContainer">
+          <EntitySet Name="Authenticated_user" EntityType="Self.Authenticated_user" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gotoStreet" EntityType="Self.gotoStreet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="police" EntityType="Self.police" Schema="dbo" store:Type="Tables" />
@@ -90,6 +100,15 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gotoStreetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Authenticated_user">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="Mother_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Birth_date" Type="DateTime" Precision="0" />
+          <Property Name="ICN" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="city">
           <Key>
             <PropertyRef Name="userid" />
@@ -160,7 +179,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="gotoStreetEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="gotoStreetEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authenticated_user" EntityType="Self.Authenticated_user" />
           <EntitySet Name="city" EntityType="Self.city" />
           <EntitySet Name="gotoStreet" EntityType="Self.gotoStreet" />
           <EntitySet Name="police" EntityType="Self.police" />
@@ -179,7 +199,17 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="gotoStreetModelStoreContainer" CdmEntityContainer="gotoStreetEntities">
+        <EntityContainerMapping StorageEntityContainer="gotoStreetModelStoreContainer" CdmEntityContainer="gotoStreetEntities1">
+          <EntitySetMapping Name="Authenticated_user">
+            <EntityTypeMapping TypeName="gotoStreetModel.Authenticated_user">
+              <MappingFragment StoreEntitySet="Authenticated_user">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+                <ScalarProperty Name="ICN" ColumnName="ICN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="city">
             <EntityTypeMapping TypeName="gotoStreetModel.city">
               <MappingFragment StoreEntitySet="city">

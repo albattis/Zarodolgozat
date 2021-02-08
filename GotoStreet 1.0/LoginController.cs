@@ -27,7 +27,7 @@ namespace GotoStreet_1._0
 
         {
             string passwords = null;
-            var context = new gotoStreetEntities();
+            var context = new gotoStreetEntities1();
             foreach (var item in context.user)
             {
                 if (item.userid.Equals(int.Parse(id)))

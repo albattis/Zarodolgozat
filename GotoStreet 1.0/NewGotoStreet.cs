@@ -38,7 +38,7 @@ namespace GotoStreet_1._0
                         status = status
                     };
                     gotoStreet gt = gotoStreet;
-                    var context = new gotoStreetEntities();
+                    var context = new gotoStreetEntities1();
                     context.gotoStreet.Add(gt);
                     context.SaveChanges();
                 Error.Sucessfull_go();   

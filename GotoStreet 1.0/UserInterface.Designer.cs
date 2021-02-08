@@ -30,11 +30,13 @@
         {
             this.GotoStreetMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.felhasználóiAdataimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.engedélyezettKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elutasitottKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újKijárásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.munkáltatóiIgazolásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sugóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasználóiKézikönyvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +47,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Welcomae_Label = new System.Windows.Forms.Label();
             this.Date_Label = new System.Windows.Forms.Label();
+            this.userdatas = new System.Windows.Forms.Label();
+            this.usedata_button = new System.Windows.Forms.Button();
+            this.Authenticated_label = new System.Windows.Forms.Label();
             this.GotoStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GotoStreet_Views)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +69,23 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.felhasználóiAdataimToolStripMenuItem,
             this.kilépésToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // felhasználóiAdataimToolStripMenuItem
+            // 
+            this.felhasználóiAdataimToolStripMenuItem.Name = "felhasználóiAdataimToolStripMenuItem";
+            this.felhasználóiAdataimToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.felhasználóiAdataimToolStripMenuItem.Text = "Felhasználói adataim";
+            this.felhasználóiAdataimToolStripMenuItem.Click += new System.EventHandler(this.FelhasználóiAdataimToolStripMenuItem_Click);
+            // 
             // kilépésToolStripMenuItem
             // 
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.KilépésToolStripMenuItem_Click);
             // 
@@ -81,7 +94,8 @@
             this.kijárásokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.engedélyezettKijárásokToolStripMenuItem,
             this.elutasitottKijárásokToolStripMenuItem,
-            this.újKijárásToolStripMenuItem});
+            this.újKijárásToolStripMenuItem,
+            this.munkáltatóiIgazolásToolStripMenuItem});
             this.kijárásokToolStripMenuItem.Name = "kijárásokToolStripMenuItem";
             this.kijárásokToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.kijárásokToolStripMenuItem.Text = "Kijárások";
@@ -106,6 +120,13 @@
             this.újKijárásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.újKijárásToolStripMenuItem.Text = "Új kijárás..";
             this.újKijárásToolStripMenuItem.Click += new System.EventHandler(this.ÚjKijárásToolStripMenuItem_Click);
+            // 
+            // munkáltatóiIgazolásToolStripMenuItem
+            // 
+            this.munkáltatóiIgazolásToolStripMenuItem.Name = "munkáltatóiIgazolásToolStripMenuItem";
+            this.munkáltatóiIgazolásToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.munkáltatóiIgazolásToolStripMenuItem.Text = "Munkáltatói Igazolás";
+            this.munkáltatóiIgazolásToolStripMenuItem.Click += new System.EventHandler(this.MunkáltatóiIgazolásToolStripMenuItem_Click);
             // 
             // sugóToolStripMenuItem
             // 
@@ -181,10 +202,38 @@
             // 
             this.Date_Label.AutoSize = true;
             this.Date_Label.Font = new System.Drawing.Font("Arial", 15.75F);
-            this.Date_Label.Location = new System.Drawing.Point(178, 364);
+            this.Date_Label.Location = new System.Drawing.Point(188, 301);
             this.Date_Label.Name = "Date_Label";
             this.Date_Label.Size = new System.Drawing.Size(0, 24);
             this.Date_Label.TabIndex = 3;
+            // 
+            // userdatas
+            // 
+            this.userdatas.AutoSize = true;
+            this.userdatas.Location = new System.Drawing.Point(61, 363);
+            this.userdatas.Name = "userdatas";
+            this.userdatas.Size = new System.Drawing.Size(0, 13);
+            this.userdatas.TabIndex = 4;
+            // 
+            // usedata_button
+            // 
+            this.usedata_button.Location = new System.Drawing.Point(512, 387);
+            this.usedata_button.Name = "usedata_button";
+            this.usedata_button.Size = new System.Drawing.Size(120, 40);
+            this.usedata_button.TabIndex = 5;
+            this.usedata_button.Text = "Adatok elrejtése";
+            this.usedata_button.UseVisualStyleBackColor = true;
+            this.usedata_button.Click += new System.EventHandler(this.Usedata_button_Click);
+            // 
+            // Authenticated_label
+            // 
+            this.Authenticated_label.AutoSize = true;
+            this.Authenticated_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.Authenticated_label.ForeColor = System.Drawing.Color.Coral;
+            this.Authenticated_label.Location = new System.Drawing.Point(293, 89);
+            this.Authenticated_label.Name = "Authenticated_label";
+            this.Authenticated_label.Size = new System.Drawing.Size(0, 20);
+            this.Authenticated_label.TabIndex = 6;
             // 
             // UserInterface
             // 
@@ -192,6 +241,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Authenticated_label);
+            this.Controls.Add(this.usedata_button);
+            this.Controls.Add(this.userdatas);
             this.Controls.Add(this.Date_Label);
             this.Controls.Add(this.Welcomae_Label);
             this.Controls.Add(this.GotoStreet_Views);
@@ -226,5 +278,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label Welcomae_Label;
         private System.Windows.Forms.Label Date_Label;
+        private System.Windows.Forms.ToolStripMenuItem felhasználóiAdataimToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem munkáltatóiIgazolásToolStripMenuItem;
+        private System.Windows.Forms.Label userdatas;
+        private System.Windows.Forms.Button usedata_button;
+        private System.Windows.Forms.Label Authenticated_label;
     }
 }

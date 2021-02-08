@@ -7,7 +7,7 @@ namespace GotoStreet_1._0
     public partial class UserInterface : Form
     {
 
-      readonly  GotoStreetUser LogUser = new GotoStreetUser();
+      readonly GotoStreetUser LogUser = new GotoStreetUser();
 
         private readonly int id;
 
@@ -18,12 +18,65 @@ namespace GotoStreet_1._0
             UserSettings();
             Welcomae_Label.Text = "Üdvözöllek Kedves "+LogUser.Firstnames+" "+LogUser.Lastnames;
             Date_Label.Text = "Bejelentkezés ideje:  "+ DateTime.Now.ToString();
+            userdatas.Visible = false;
+            usedata_button.Visible = false;
+            var context = new gotoStreetEntities1();
+            foreach (var item in context.Authenticated_user)
+            {
+                if (id.Equals(item.userid))
+                {
+                    Authenticated_label.Text = "Regisztrált Felhasználó";
+
+                }
+                else {
+                    Authenticated_label.Text = "Nem Regisztrált Felhasználó";
+                    munkáltatóiIgazolásToolStripMenuItem.Visible=false;
+                }
+            }
         
         }
 
+        private Label Emlpoyee_certificate_setting()
+        {
+
+
+            Label label =new Label();
+            var context = new Company_registerEntities();
+            foreach (var item in context.Emlpoye_Certificate)
+            {
+                if (id.Equals(item.userid))
+                {
+                    var context3 = new Company_registerEntities();
+                    foreach (var item2 in context3.Company)
+                    {
+                        if (item.Companyid.Equals(item2.company_id))
+                        {
+                            var context2 = new gotoStreetEntities1();
+                            foreach (var item3 in context2.Authenticated_user)
+                                if (id.Equals(item3.userid))
+                                {
+                                   label.Text = "Alulirott "
+                                         + item2.Company_manager + " mint a(z) "
+                                         + item2.name + " ügyvezetője Kijelentem,hogy: \n\n" +
+                                         "Név: " + LogUser.Firstnames + " " + LogUser.Lastnames + " nevü \n" +
+                                         "Születési idő: " + item3.Birth_date + "\n" +
+                                         "Anyja neve: " + item3.Mother_name + "\n" +
+                                         "Lakcim: " + LogUser.Zips + " " + LogUser.Citys + " " + LogUser.Streets + " " + LogUser.Places + " " + LogUser.Housenumbers +
+                                          "\n\nNevü munkavállaló, Otthonát elhagyhatja munkavégzés céljából.\n\n" + DateTime.Now + " \n\n" + item2.Company_manager + "\n Ügyvezetö\n" + item2.name;
+                                }
+                        }
+
+                    }
+                }
+
+            }
+            return label;
+        }
+
+
         private void UserSettings()
         {
-            var context = new gotoStreetEntities();
+            var context = new gotoStreetEntities1();
             foreach (var item in context.user)
             {
                 if (id.Equals(item.userid))
@@ -39,10 +92,11 @@ namespace GotoStreet_1._0
             }
         }
 
+
         private void GotoStreet_View(string v)
         {
 
-            var context = new gotoStreetEntities();
+            var context = new gotoStreetEntities1();
             GotoStreet_Views.ColumnCount = 4;
             foreach (var go in context.gotoStreet)
             {
@@ -89,6 +143,26 @@ namespace GotoStreet_1._0
         {
             GotoStreetHelpForm Help = new GotoStreetHelpForm();
             Help.Show();
+        }
+
+        private void FelhasználóiAdataimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            userdatas.Text = "Felhasználó név: "+LogUser.Firstnames+" "+LogUser.Lastnames+"\n"+
+                "Lakcím= "+LogUser.Zips+" "+LogUser.Citys+" "+LogUser.Streets+" "+LogUser.Places+" "+LogUser.Housenumbers;
+            usedata_button.Visible = true;
+            userdatas.Visible = true;
+        }
+
+        private void Usedata_button_Click(object sender, EventArgs e)
+        {
+            userdatas.Visible=false;
+            usedata_button.Hide();
+        }
+
+        private void MunkáltatóiIgazolásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            emlpoyee_certificate ec = new emlpoyee_certificate(Emlpoyee_certificate_setting());
+            ec.Show();
         }
     }
 }
