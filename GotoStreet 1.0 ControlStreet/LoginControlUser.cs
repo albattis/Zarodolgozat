@@ -9,6 +9,7 @@ namespace GotoStreet_1._0_ControlStreet
     class LoginControlUser
     {
         private readonly PasswordHash PH = new PasswordHash();
+        private readonly ControlStreetMessage Message = new ControlStreetMessage();
 
         private string Username { get; set; }
         private string Password { get; set; }
@@ -41,8 +42,10 @@ namespace GotoStreet_1._0_ControlStreet
                         user[1] = item.employee;
                         user[2] = item.Id.ToString();
                     }
+                    else { Message.PasswordError(); }
 
                 }
+                else { Message.UsernameError(); }
             }
 
         }

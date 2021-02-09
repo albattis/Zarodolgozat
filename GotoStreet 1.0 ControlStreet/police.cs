@@ -12,12 +12,9 @@ namespace GotoStreet_1._0_ControlStreet
     using System;
     using System.Collections.Generic;
     
-    public partial class puser
+    public partial class police
     {
-        public int Id { get; set; }
+        public int police_office_id { get; set; }
         public string name { get; set; }
-        public string employee { get; set; }
-        public string password { get; set; }
-        public int officeid { get; set; }
     }
 }

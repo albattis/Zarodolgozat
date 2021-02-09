@@ -32,9 +32,6 @@ namespace GotoStreet_1._0_ControlStreet
         }
     
 
-        private void Registration_button_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

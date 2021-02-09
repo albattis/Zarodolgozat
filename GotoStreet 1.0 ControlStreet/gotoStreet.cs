@@ -12,12 +12,16 @@ namespace GotoStreet_1._0_ControlStreet
     using System;
     using System.Collections.Generic;
     
-    public partial class puser
+    public partial class gotoStreet
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        public string employee { get; set; }
-        public string password { get; set; }
-        public int officeid { get; set; }
+        public int userid { get; set; }
+        public Nullable<System.DateTime> go_date { get; set; }
+        public Nullable<System.DateTime> record_date { get; set; }
+        public string cel { get; set; }
+        public string status { get; set; }
+        public string mode { get; set; }
+    
+        public virtual user user { get; set; }
     }
 }
