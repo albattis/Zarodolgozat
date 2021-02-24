@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.Firstname_label = new System.Windows.Forms.Label();
             this.Lastname_label = new System.Windows.Forms.Label();
             this.zip_label = new System.Windows.Forms.Label();
@@ -309,6 +310,7 @@
             this.Controls.Add(this.zip_label);
             this.Controls.Add(this.Lastname_label);
             this.Controls.Add(this.Firstname_label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registration";
             this.Text = "GotoStreet 1.0 Regisztrációs Ablak";
             this.ResumeLayout(false);

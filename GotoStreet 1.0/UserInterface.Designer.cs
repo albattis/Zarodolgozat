@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInterface));
             this.GotoStreetMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasználóiAdataimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -248,6 +249,7 @@
             this.Controls.Add(this.Welcomae_Label);
             this.Controls.Add(this.GotoStreet_Views);
             this.Controls.Add(this.GotoStreetMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.GotoStreetMenu;
             this.Name = "UserInterface";
             this.Text = "GotoStreet 1.0 (Felhasználói környezet.)";

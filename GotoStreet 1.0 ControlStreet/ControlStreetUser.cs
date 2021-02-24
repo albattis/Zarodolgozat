@@ -15,6 +15,10 @@ namespace GotoStreet_1._0_ControlStreet
         public string Names { get { return Name; }set { Name = value; } }
         public string Employees { get { return Employee; }set { Employee = value; } }
         public int Ids { get { return Id; } set { Id = value; } }
+
+        public ControlStreetUser()
+        { }
+        
         public ControlStreetUser(string[] users)
         {
             Names = users[0];
@@ -22,5 +26,6 @@ namespace GotoStreet_1._0_ControlStreet
             Ids = int.Parse(users[2]);
         }
 
+        
     }
 }

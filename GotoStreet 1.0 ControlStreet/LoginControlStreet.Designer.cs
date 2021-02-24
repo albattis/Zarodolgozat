@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginControlStreet));
             this.welcome_label = new System.Windows.Forms.Label();
             this.username_label = new System.Windows.Forms.Label();
             this.password_label = new System.Windows.Forms.Label();
@@ -89,20 +90,24 @@
             // 
             // Password_textbox
             // 
+            this.Password_textbox.Font = new System.Drawing.Font("Arial", 12.25F);
             this.Password_textbox.Location = new System.Drawing.Point(285, 142);
             this.Password_textbox.Multiline = true;
             this.Password_textbox.Name = "Password_textbox";
             this.Password_textbox.PasswordChar = '#';
             this.Password_textbox.Size = new System.Drawing.Size(183, 30);
             this.Password_textbox.TabIndex = 6;
+            this.Password_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Username_textbox
             // 
+            this.Username_textbox.Font = new System.Drawing.Font("Arial", 12.25F);
             this.Username_textbox.Location = new System.Drawing.Point(285, 92);
             this.Username_textbox.Multiline = true;
             this.Username_textbox.Name = "Username_textbox";
             this.Username_textbox.Size = new System.Drawing.Size(183, 30);
             this.Username_textbox.TabIndex = 7;
+            this.Username_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LoginControlStreet
             // 
@@ -117,6 +122,7 @@
             this.Controls.Add(this.password_label);
             this.Controls.Add(this.username_label);
             this.Controls.Add(this.welcome_label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginControlStreet";
             this.Text = "Gotostreet Control 1.0";
             this.ResumeLayout(false);

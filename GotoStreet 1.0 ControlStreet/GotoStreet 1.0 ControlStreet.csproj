@@ -55,7 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authenticated_user.cs">
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="city.cs">
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ControlStreetMessage.cs" />
+    <Compile Include="ControlStreetRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlStreetRegistration.Designer.cs">
+      <DependentUpon>ControlStreetRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlStreetUser.cs" />
     <Compile Include="ControlStreetUserboard.cs">
       <SubType>Form</SubType>
@@ -66,6 +78,24 @@
     <Compile Include="errors.cs">
       <DependentUpon>UserControlstreet.tt</DependentUpon>
     </Compile>
+    <Compile Include="gotoStreet.cs">
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GotoStreetModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GotoStreetModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GotoStreetModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GotoStreetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GotoStreetModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="LoginControlStreet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +104,9 @@
     </Compile>
     <Compile Include="LoginControlUser.cs" />
     <Compile Include="PasswordHash.cs" />
+    <Compile Include="police.cs">
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puser.cs">
@@ -81,6 +114,9 @@
     </Compile>
     <Compile Include="pworks.cs">
       <DependentUpon>UserControlstreet.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>GotoStreetModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserControlstreet.Context.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +133,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserControlstreet.edmx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ControlStreetRegistration.resx">
+      <DependentUpon>ControlStreetRegistration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlStreetUserboard.resx">
       <DependentUpon>ControlStreetUserboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +151,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="GotoStreetModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GotoStreetModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GotoStreetModel.edmx.diagram">
+      <DependentUpon>GotoStreetModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,6 +180,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GotoStreetModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GotoStreetModel.edmx</DependentUpon>
+      <LastGenOutput>GotoStreetModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GotoStreetModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GotoStreetModel.edmx</DependentUpon>
+      <LastGenOutput>GotoStreetModel.cs</LastGenOutput>
+    </Content>
     <Content Include="UserControlstreet.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UserControlstreet.Context.cs</LastGenOutput>

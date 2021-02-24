@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewGotoStreet));
             this.Firstname_label = new System.Windows.Forms.Label();
             this.Firstname_label_write = new System.Windows.Forms.Label();
             this.Lastaname_label = new System.Windows.Forms.Label();
@@ -178,6 +179,7 @@
             this.Controls.Add(this.Lastaname_label);
             this.Controls.Add(this.Firstname_label_write);
             this.Controls.Add(this.Firstname_label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewGotoStreet";
             this.Text = "GotoStreet 1.0 Új kijárási igény";
             this.ResumeLayout(false);

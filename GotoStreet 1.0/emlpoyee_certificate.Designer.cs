@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(emlpoyee_certificate));
             this.welcome_label = new System.Windows.Forms.Label();
             this.employye_label = new System.Windows.Forms.Label();
             this.button_exit = new System.Windows.Forms.Button();
@@ -86,6 +87,7 @@
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.employye_label);
             this.Controls.Add(this.welcome_label);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "emlpoyee_certificate";
             this.Text = "GotoStreet 1.0 Kijárási Igazolás";
             this.ResumeLayout(false);
