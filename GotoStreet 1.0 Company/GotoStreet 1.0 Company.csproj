@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D03127F-3E3B-4A29-977D-89EB859A4A1D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GotoStreet_1._0_Company</RootNamespace>
+    <AssemblyName>GotoStreet 1.0 Company</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authenticated_user.cs">
+      <DependentUpon>CompanyGotostreetModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CertificationControl.cs" />
+    <Compile Include="Company.cs">
+      <DependentUpon>CompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyBoard.Designer.cs">
+      <DependentUpon>CompanyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyController.cs" />
+    <Compile Include="CompanyGotostreetModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyGotostreetModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyGotostreetModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyGotostreetModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyGotostreetModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyGotostreetModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyLogin.Designer.cs">
+      <DependentUpon>CompanyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Emlpoye_Certificate.cs">
+      <DependentUpon>CompanyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessage.cs" />
+    <Compile Include="PasswordHash.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CompanyBoard.resx">
+      <DependentUpon>CompanyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyLogin.resx">
+      <DependentUpon>CompanyLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="CompanyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CompanyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="CompanyGotostreetModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CompanyGotostreetModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CompanyGotostreetModels.edmx.diagram">
+      <DependentUpon>CompanyGotostreetModels.edmx</DependentUpon>
+    </None>
+    <None Include="CompanyModel.edmx.diagram">
+      <DependentUpon>CompanyModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CompanyGotostreetModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyGotostreetModels.edmx</DependentUpon>
+      <LastGenOutput>CompanyGotostreetModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CompanyGotostreetModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyGotostreetModels.edmx</DependentUpon>
+      <LastGenOutput>CompanyGotostreetModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="CompanyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyModel.edmx</DependentUpon>
+      <LastGenOutput>CompanyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CompanyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CompanyModel.edmx</DependentUpon>
+      <LastGenOutput>CompanyModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
