@@ -36,11 +36,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Return_label = new System.Windows.Forms.Label();
             this.Welcome_label = new System.Windows.Forms.Label();
+            this.delete_certificate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Insert_button
             // 
-            this.Insert_button.Location = new System.Drawing.Point(78, 251);
+            this.Insert_button.Location = new System.Drawing.Point(7, 251);
             this.Insert_button.Name = "Insert_button";
             this.Insert_button.Size = new System.Drawing.Size(105, 38);
             this.Insert_button.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             // Delete_button
             // 
-            this.Delete_button.Location = new System.Drawing.Point(270, 251);
+            this.Delete_button.Location = new System.Drawing.Point(339, 251);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(112, 38);
             this.Delete_button.TabIndex = 1;
@@ -98,9 +99,8 @@
             this.Return_label.AutoSize = true;
             this.Return_label.Location = new System.Drawing.Point(112, 201);
             this.Return_label.Name = "Return_label";
-            this.Return_label.Size = new System.Drawing.Size(35, 13);
+            this.Return_label.Size = new System.Drawing.Size(0, 13);
             this.Return_label.TabIndex = 6;
-            this.Return_label.Text = "label2";
             // 
             // Welcome_label
             // 
@@ -112,12 +112,23 @@
             this.Welcome_label.TabIndex = 7;
             this.Welcome_label.Text = "Üdvözli a GotoStreet 1.0";
             // 
+            // delete_certificate
+            // 
+            this.delete_certificate.Location = new System.Drawing.Point(174, 251);
+            this.delete_certificate.Name = "delete_certificate";
+            this.delete_certificate.Size = new System.Drawing.Size(109, 37);
+            this.delete_certificate.TabIndex = 8;
+            this.delete_certificate.Text = "Igazolás törlése";
+            this.delete_certificate.UseVisualStyleBackColor = true;
+            this.delete_certificate.Click += new System.EventHandler(this.delete_certificate_Click);
+            // 
             // CompanyBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(481, 366);
+            this.Controls.Add(this.delete_certificate);
             this.Controls.Add(this.Welcome_label);
             this.Controls.Add(this.Return_label);
             this.Controls.Add(this.button1);
@@ -143,5 +154,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Return_label;
         private System.Windows.Forms.Label Welcome_label;
+        private System.Windows.Forms.Button delete_certificate;
     }
 }

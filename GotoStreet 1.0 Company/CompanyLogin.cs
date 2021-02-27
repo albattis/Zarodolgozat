@@ -23,6 +23,8 @@ namespace GotoStreet_1._0_Company
                
             }
             else { M.LoginError(); }
+            username_textbox.Text = "";
+            password_Textbox.Text = "";
         }
 
         private void Escape_button_Click(object sender, System.EventArgs e)

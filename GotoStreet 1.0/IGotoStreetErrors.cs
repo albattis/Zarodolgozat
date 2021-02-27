@@ -15,6 +15,14 @@ namespace GotoStreet_1._0
 
    class GotoStreetError : IGotoStreetErrors
     {
+        public void EntityException()
+        {
+            MessageBox.Show("Nem lehet elérni az adatbázist. Idökorlát tullépés", "Bejelentkezési Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        public void FormatException()
+        {
+            MessageBox.Show("Belsö hiba. Nem konvertálható", "String To Int", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         public void LoginnameError()
         {

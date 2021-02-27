@@ -145,7 +145,7 @@ namespace GotoStreet_1._0
         private void FelhasználóiAdataimToolStripMenuItem_Click(object sender, EventArgs e)
         {
             userdatas.Text = "Felhasználó név: " + LogUser.Firstnames + " " + LogUser.Lastnames + "\n" +
-                "Lakcím= " + LogUser.Zips + " " + LogUser.Citys + " " + LogUser.Streets + " " + LogUser.Places + " " + LogUser.Housenumbers;
+                "Lakcím: " + LogUser.Zips + " " + LogUser.Citys + " " + LogUser.Streets + " " + LogUser.Places + " " + LogUser.Housenumbers;
             usedata_button.Visible = true;
             userdatas.Visible = true;
         }

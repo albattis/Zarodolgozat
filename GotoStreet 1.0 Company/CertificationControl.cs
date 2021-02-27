@@ -33,11 +33,11 @@ namespace GotoStreet_1._0_Company
                 if (Id.Equals(item.userid)) { IdControl = true; }
             }
         }
-        
-       public void InsertControl(int compid)
+
+        public void InsertControl(int compid)
         {
             Insertcontrol = false;
-            
+
             Emlpoye_Certificate emlpoye_Certificate = new Emlpoye_Certificate
             {
                 userid = Id,
@@ -46,25 +46,39 @@ namespace GotoStreet_1._0_Company
             };
             Emlpoye_Certificate cc;
             cc = emlpoye_Certificate;
-            var context = new Company_registerEntities1();
-            foreach(var item in context.Emlpoye_Certificate)
+            using (var context = new Company_registerEntities1())
             {
-                if (!item.userid.Equals(Id))
+                foreach (var item in context.Emlpoye_Certificate)
                 {
-                    Insertcontrol = true;
+                    if (!item.userid.Equals(Id))
+                    {
+                        Insertcontrol = true;
+                    }
+                }
+                if (Insertcontrol)
+                {
+                    try
+                    {
+                        context.Emlpoye_Certificate.Add(cc);
+                        context.SaveChanges();
+                    }
+                    catch (DbUpdateException)
+                    {
+                        Insertcontrol = false;
+                    }
                 }
             }
-            if (Insertcontrol)
+        }
+
+        public bool Delete_Certification()
+        {
+            using(var context = new Company_registerEntities1())
             {
-                try
-                {
-                    context.Emlpoye_Certificate.Add(cc);
-                    context.SaveChanges();
-                }
-                catch (DbUpdateException) 
-                {
-                    Insertcontrol=false;
-                }
+                Emlpoye_Certificate Em = context.Emlpoye_Certificate.Where(x => x.userid == Id).Single<Emlpoye_Certificate>();
+                context.Emlpoye_Certificate.Remove(Em);
+                context.SaveChanges();
+                return true;
+                
             }
         }
 

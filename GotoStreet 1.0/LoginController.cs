@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GotoStreet_1._0
 {
-    class LoginController
+    public class LoginController
     {
        readonly PasswordHash PH = new PasswordHash();
        readonly GotoStreetError Error = new GotoStreetError();
@@ -28,16 +30,21 @@ namespace GotoStreet_1._0
         {
             string passwords = null;
             var context = new gotoStreetEntities1();
-            foreach (var item in context.user)
+            try
             {
-                if (item.userid.Equals(int.Parse(id)))
+                foreach (var item in context.user)
                 {
-                    passwords = item.password;
-                    Data = true;
+
+                    if (item.userid.Equals(int.Parse(id)))
+                    {
+                        passwords = item.password;
+                        Data = true;
+                    }
+
                 }
-
-
             }
+            catch (FormatException) { Error.FormatException(); }
+            catch (EntityException) { Error.EntityException(); }
             if (Data)
             {
                 Data = false;

@@ -51,5 +51,13 @@ namespace GotoStreet_1._0_Company
                 MessageBox.Show("Sikertelen a Kijárási dokumentum elküldése");
             }
         }
+
+        private void delete_certificate_Click(object sender, EventArgs e)
+        {
+            if (Certification.Delete_Certification())
+            {
+                MessageBox.Show("Sikeresen törölte a dolgozó kijárási igazolását.", "Törlés megerösités", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

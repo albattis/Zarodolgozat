@@ -23,18 +23,20 @@ namespace GotoStreet_1._0_Company
 
         private void Login()
         {
-            var context = new Company_registerEntities1();
-            foreach (var item in context.Company)
+            using (var context = new Company_registerEntities1())
             {
-                if (item.company_id.Equals(int.Parse(username)))
+                foreach (var item in context.Company)
                 {
-                    string x = PS.Sha256(password);
-                    if (x.Equals(item.password))
+                    if (item.company_id.Equals(int.Parse(username)))
                     {
-                        success = true;
+                        string x = PS.Sha256(password);
+                        if (x.Equals(item.password))
+                        {
+                            success = true;
+                        }
                     }
+
                 }
-                
             }
         }
 
