@@ -18,6 +18,6 @@ namespace GotoStreet_1._0_ControlStreet
         public string name { get; set; }
         public string employee { get; set; }
         public string password { get; set; }
-        public int officeid { get; set; }
+        public Nullable<int> officeid { get; set; }
     }
 }

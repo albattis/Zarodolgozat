@@ -23,8 +23,8 @@ namespace GotoStreet_1._0_ControlStreet
 
         private void Insert()
         {
-            try
-            {
+           // try
+           // {
                 if (!data)
                 {
                     var context = new policeusersEntities();
@@ -33,10 +33,10 @@ namespace GotoStreet_1._0_ControlStreet
                     PasswordHash PH = new PasswordHash();
                     string pass = PH.Sha256(password_textbox.Text);
 
-                    puser user = new puser
-                    {
+                puser user = new puser
+                {
 
-                        Id = id,
+                    Id = id,
                         name = name_textbox.Text.ToString(),
                         password = pass,
                         employee = employee_textbox.Text.ToString(),
@@ -53,8 +53,8 @@ namespace GotoStreet_1._0_ControlStreet
                 { Mess.InsertSuccessfull(); }
                 else { Mess.InsertError(); }
 
-            }
-            catch (DbEntityValidationException e) { }
+            //}
+            //catch (DbEntityValidationException ) { Mess.InsertError(); }
             }
         private void Exit_button(object sender, EventArgs e)
         {
