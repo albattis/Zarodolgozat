@@ -62,7 +62,7 @@
             // Company_information
             // 
             this.Company_information.AutoSize = true;
-            this.Company_information.Location = new System.Drawing.Point(48, 332);
+            this.Company_information.Location = new System.Drawing.Point(48, 313);
             this.Company_information.Name = "Company_information";
             this.Company_information.Size = new System.Drawing.Size(64, 13);
             this.Company_information.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Id Ellenörzése";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Return_label
             // 
@@ -120,7 +120,7 @@
             this.delete_certificate.TabIndex = 8;
             this.delete_certificate.Text = "Igazolás törlése";
             this.delete_certificate.UseVisualStyleBackColor = true;
-            this.delete_certificate.Click += new System.EventHandler(this.delete_certificate_Click);
+            this.delete_certificate.Click += new System.EventHandler(this.Delete_certificate_Click);
             // 
             // CompanyBoard
             // 

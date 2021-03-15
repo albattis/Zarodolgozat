@@ -44,9 +44,9 @@
             this.welcome_label.Font = new System.Drawing.Font("Arial", 18.25F);
             this.welcome_label.Location = new System.Drawing.Point(54, 35);
             this.welcome_label.Name = "welcome_label";
-            this.welcome_label.Size = new System.Drawing.Size(314, 28);
+            this.welcome_label.Size = new System.Drawing.Size(331, 28);
             this.welcome_label.TabIndex = 0;
-            this.welcome_label.Text = "Üdvözlöm a GotoStreet 1.0";
+            this.welcome_label.Text = "Üdvözli Őnt a GotoStreet 1.0";
             // 
             // username_label
             // 

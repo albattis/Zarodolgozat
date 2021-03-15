@@ -7,7 +7,7 @@
       <Diagram DiagramId="0ef18e1f1e6d42f2b4c3923a86d2e44c" Name="Diagram1">
         <EntityTypeShape EntityType="policeusersModel.errors" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="policeusersModel.puser" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="policeusersModel.pworks" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="policeusersModel.pworks" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

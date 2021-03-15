@@ -29,39 +29,41 @@ namespace GotoStreet_1._0
 
         {
             string passwords = null;
-            var context = new gotoStreetEntities1();
-            try
+            using (var context = new gotoStreetEntities1())
             {
-                foreach (var item in context.user)
+                try
                 {
-
-                    if (item.userid.Equals(int.Parse(id)))
+                    foreach (var item in context.user)
                     {
-                        passwords = item.password;
+
+                        if (item.userid.Equals(int.Parse(id)))
+                        {
+                            passwords = item.password;
+                            Data = true;
+                        }
+
+                    }
+                }
+                catch (FormatException) { Error.FormatException(); }
+                catch (EntityException) { Error.EntityException(); }
+                if (Data)
+                {
+                    Data = false;
+                    string ControlPassword = PH.Sha256(password);
+
+                    if (ControlPassword.Equals(passwords))
+                    {
                         Data = true;
                     }
+                    else
+                    {
+                        Error.PasswordError();
+                    }
 
+                    return Data;
                 }
+                else { Error.LoginnameError(); return false; }
             }
-            catch (FormatException) { Error.FormatException(); }
-            catch (EntityException) { Error.EntityException(); }
-            if (Data)
-            {
-                Data = false;
-                string ControlPassword = PH.Sha256(password);
-
-                if (ControlPassword.Equals(passwords))
-                {
-                    Data = true;
-                }
-                else
-                {
-                    Error.PasswordError();
-                }
-
-                return Data;
-            }
-            else { Error.LoginnameError(); return false; }
         }
 
     }

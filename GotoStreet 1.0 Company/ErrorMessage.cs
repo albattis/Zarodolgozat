@@ -13,5 +13,10 @@ namespace GotoStreet_1._0_Company
         {
             MessageBox.Show("Rossz felhasználónév vagy jelszó!","Bejelentkezési Hiba",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
+
+        internal void SqlError()
+        {
+            MessageBox.Show("Nem lehet csatlakozni az adatbázishoz", "Elérési Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -23,12 +23,13 @@ namespace GotoStreet_1._0_ControlStreet
 
         private void Insert()
         {
-           // try
-           // {
+            int id=0;
+            try
+            {
                 if (!data)
                 {
                     var context = new policeusersEntities();
-                    int id = context.puser.Count() + 1;
+                     id = context.puser.Count() + 1;
 
                     PasswordHash PH = new PasswordHash();
                     string pass = PH.Sha256(password_textbox.Text);
@@ -50,11 +51,11 @@ namespace GotoStreet_1._0_ControlStreet
                     data = true;
                 }
                 if (data)
-                { Mess.InsertSuccessfull(); }
+                { Mess.InsertSuccessfull();Mess.InserSuccess(id); }
                 else { Mess.InsertError(); }
-
-            //}
-            //catch (DbEntityValidationException ) { Mess.InsertError(); }
+                
+            }
+            catch (DbEntityValidationException ) { Mess.InsertError(); }
             }
         private void Exit_button(object sender, EventArgs e)
         {

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace GotoStreet_1._0_Company
 {
     class CompanyController
     {
         private readonly PasswordHash PS = new PasswordHash();
+        private readonly ErrorMessage Message = new ErrorMessage();
         
-        private string username;
-        private string password;
+        private readonly string username;
+        private readonly string password;
         private bool success=false;
 
        public CompanyController(string usn,string psw) 
@@ -23,22 +19,27 @@ namespace GotoStreet_1._0_Company
 
         private void Login()
         {
-            using (var context = new Company_registerEntities1())
+            try
             {
-                foreach (var item in context.Company)
+                using (var context = new Company_registerEntities1())
                 {
-                    if (item.company_id.Equals(int.Parse(username)))
+                    foreach (var item in context.Company)
                     {
-                        string x = PS.Sha256(password);
-                        if (x.Equals(item.password))
+                        if (item.company_id.Equals(int.Parse(username)))
                         {
-                            success = true;
+                            string x = PS.Sha256(password);
+                            if (x.Equals(item.password))
+                            {
+                                success = true;
+                            }
                         }
-                    }
 
+                    }
                 }
             }
-        }
+            catch (System.Data.SqlClient.SqlException) { Message.SqlError(); }
+            
+            }
 
         public bool ReturnLogin()
         {

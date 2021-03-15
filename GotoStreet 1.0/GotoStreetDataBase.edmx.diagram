@@ -5,13 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="57e432a37b5c41778b19d155bf8970f4" Name="Diagram1">
-        <EntityTypeShape EntityType="gotoStreetModel.Authenticated_user" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gotoStreetModel.Authenticated_user" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="gotoStreetModel.city" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="gotoStreetModel.gotoStreet" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="gotoStreetModel.police" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gotoStreetModel.police" Width="1.5" PointX="5.125" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="gotoStreetModel.user" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <AssociationConnector Association="gotoStreetModel.FK_city_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="gotoStreetModel.FK_gotoStreet_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="gotoStreetModel.FK_user_ToTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

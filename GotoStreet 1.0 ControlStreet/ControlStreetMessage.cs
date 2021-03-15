@@ -10,6 +10,11 @@ namespace GotoStreet_1._0_ControlStreet
     class ControlStreetMessage
     {
 
+        public void InserSuccess(int id)
+        {
+            string text = "Felhasználónév: " + id+" Jelszó: A Választott jelszó.";
+            MessageBox.Show(text, "Bejelentkezési adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         public void UsernameError()
         {
             MessageBox.Show("Hibás felhasználónevet adott meg","Bejelentkezési hiba",MessageBoxButtons.OK,MessageBoxIcon.Error);

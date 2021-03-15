@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GotoStreet_1._0_Company
 {
@@ -12,17 +9,17 @@ namespace GotoStreet_1._0_Company
         private int Id;
         private bool IdControl { get; set; }
         private bool Insertcontrol { get; set; }
-        public bool IdsControl { get { return IdControl; }set { IdControl = value; } }
-        public bool InsContr { get { return Insertcontrol; }set { Insertcontrol = value; } }
+        public bool IdsControl { get { return IdControl; } set { IdControl = value; } }
+        public bool InsContr { get { return Insertcontrol; } set { Insertcontrol = value; } }
 
         public CertificationControl() { }
 
-       public void CertificationControlId(int ids)
+        public void CertificationControlId(int ids)
         {
-            this.Id = ids;
-            this.IdControl = false;
+            Id = ids;
+            IdControl = false;
             ControlId();
-            
+
         }
 
         private void ControlId()
@@ -72,13 +69,13 @@ namespace GotoStreet_1._0_Company
 
         public bool Delete_Certification()
         {
-            using(var context = new Company_registerEntities1())
+            using (var context = new Company_registerEntities1())
             {
                 Emlpoye_Certificate Em = context.Emlpoye_Certificate.Where(x => x.userid == Id).Single<Emlpoye_Certificate>();
                 context.Emlpoye_Certificate.Remove(Em);
                 context.SaveChanges();
                 return true;
-                
+
             }
         }
 

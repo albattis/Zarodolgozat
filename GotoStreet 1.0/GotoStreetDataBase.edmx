@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gotoStreetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gotoStreetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authenticated_user">
           <Key>
             <PropertyRef Name="userid" />
@@ -13,6 +13,7 @@
           <Property Name="Mother_name" Type="varchar" MaxLength="50" />
           <Property Name="Birth_date" Type="date" />
           <Property Name="ICN" Type="varchar" MaxLength="8" />
+          <Property Name="status" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="city">
           <Key>
@@ -80,6 +81,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_user_ToTable">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="Authenticated_user" Type="Self.Authenticated_user" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="Authenticated_user">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="gotoStreetModelStoreContainer">
           <EntitySet Name="Authenticated_user" EntityType="Self.Authenticated_user" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="city" EntityType="Self.city" Schema="dbo" store:Type="Tables" />
@@ -94,9 +107,12 @@
             <End Role="user" EntitySet="user" />
             <End Role="gotoStreet" EntitySet="gotoStreet" />
           </AssociationSet>
+          <AssociationSet Name="FK_user_ToTable" Association="Self.FK_user_ToTable">
+            <End Role="user" EntitySet="user" />
+            <End Role="Authenticated_user" EntitySet="Authenticated_user" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gotoStreetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -108,6 +124,7 @@
           <Property Name="Mother_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Birth_date" Type="DateTime" Precision="0" />
           <Property Name="ICN" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user" Relationship="gotoStreetModel.FK_user_ToTable" FromRole="Authenticated_user" ToRole="user" />
         </EntityType>
         <EntityType Name="city">
           <Key>
@@ -154,6 +171,7 @@
           <Property Name="police_id" Type="Int32" />
           <NavigationProperty Name="city" Relationship="Self.FK_city_ToTable" FromRole="user" ToRole="city" />
           <NavigationProperty Name="gotoStreet" Relationship="Self.FK_gotoStreet_ToTable" FromRole="user" ToRole="gotoStreet" />
+          <NavigationProperty Name="Authenticated_user" Relationship="gotoStreetModel.FK_user_ToTable" FromRole="user" ToRole="Authenticated_user" />
         </EntityType>
         <Association Name="FK_city_ToTable">
           <End Role="user" Type="Self.user" Multiplicity="1" />
@@ -193,23 +211,29 @@
             <End Role="user" EntitySet="user" />
             <End Role="gotoStreet" EntitySet="gotoStreet" />
           </AssociationSet>
+          <AssociationSet Name="FK_user_ToTable" Association="gotoStreetModel.FK_user_ToTable">
+            <End Role="user" EntitySet="user" />
+            <End Role="Authenticated_user" EntitySet="Authenticated_user" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_user_ToTable">
+          <End Type="gotoStreetModel.user" Role="user" Multiplicity="1" />
+          <End Type="gotoStreetModel.Authenticated_user" Role="Authenticated_user" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="Authenticated_user">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="gotoStreetModelStoreContainer" CdmEntityContainer="gotoStreetEntities1">
-          <EntitySetMapping Name="Authenticated_user">
-            <EntityTypeMapping TypeName="gotoStreetModel.Authenticated_user">
-              <MappingFragment StoreEntitySet="Authenticated_user">
-                <ScalarProperty Name="userid" ColumnName="userid" />
-                <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
-                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
-                <ScalarProperty Name="ICN" ColumnName="ICN" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="city">
             <EntityTypeMapping TypeName="gotoStreetModel.city">
               <MappingFragment StoreEntitySet="city">
@@ -253,6 +277,16 @@
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="police_id" ColumnName="police_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authenticated_user">
+            <EntityTypeMapping TypeName="IsTypeOf(gotoStreetModel.Authenticated_user)">
+              <MappingFragment StoreEntitySet="Authenticated_user">
+                <ScalarProperty Name="ICN" ColumnName="ICN" />
+                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+                <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

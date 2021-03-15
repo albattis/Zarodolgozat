@@ -15,4 +15,17 @@ namespace UnitTestProjectGotoStreet_user
             Assert.AreEqual(false, Lg.Login("", ""));
         }
     }
+
+    [TestClass]
+    public class PaswordHash_test
+    {
+        [TestMethod]
+        public void SHA256_test()//Ez az egy fügvény volr a PasswordHash osztályban.
+        {
+            PasswordHash Ph = new PasswordHash();
+            Assert.AreEqual("265fda17a34611b1533d8a281ff680dc5791b0ce0a11c25b35e11c8e75685509", Ph.Sha256("'"));
+
+        }
+    }
+
 }
