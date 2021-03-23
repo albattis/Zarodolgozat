@@ -11,6 +11,9 @@ namespace GotoStreet_1._0
 
         private readonly int id;
 
+
+
+
         public UserInterface(int ids)
         {
             InitializeComponent();
@@ -26,12 +29,14 @@ namespace GotoStreet_1._0
                 if (id.Equals(item.userid))
                 {
                     Authenticated_label.Text = "Regisztrált Felhasználó";
+                    felhasználóiRegisztrációToolStripMenuItem.Visible = false;
 
                 }
                 else
                 {
                     Authenticated_label.Text = "Nem Regisztrált Felhasználó";
                     munkáltatóiIgazolásToolStripMenuItem.Visible = false;
+                    felhasználóiRegisztrációToolStripMenuItem.Visible = true;
                 }
             }
 
@@ -160,6 +165,12 @@ namespace GotoStreet_1._0
         {
             emlpoyee_certificate ec = new emlpoyee_certificate(Emlpoyee_certificate_setting());
             ec.Show();
+        }
+
+        private void FelhasználóiRegisztrációToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserAuthenticated Au = new UserAuthenticated(id);
+            Au.Show();
         }
     }
 }

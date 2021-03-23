@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="gotoStreetModel.user" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
         <AssociationConnector Association="gotoStreetModel.FK_city_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="gotoStreetModel.FK_gotoStreet_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="gotoStreetModel.FK_user_ToTable" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -25,10 +25,10 @@ namespace GotoStreet_1._0
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Authenticated_user> Authenticated_user { get; set; }
         public virtual DbSet<city> city { get; set; }
         public virtual DbSet<gotoStreet> gotoStreet { get; set; }
         public virtual DbSet<police> police { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<Authenticated_user> Authenticated_user { get; set; }
     }
 }

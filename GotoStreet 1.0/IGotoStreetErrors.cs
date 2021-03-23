@@ -39,6 +39,11 @@ namespace GotoStreet_1._0
             MessageBox.Show("Nem megfelelö dátumot adott meg.", "Beviteli Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        internal void Authenticated_Success()
+        {
+            MessageBox.Show("Sikeresen elküldve a Hitelesitési kérelem", "Hitelesités", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         internal void FileNootFound()
         {
             MessageBox.Show("Nem sikerült a képet megjelenteni.", "Beolvasási kisérlet", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +98,10 @@ namespace GotoStreet_1._0
         public void Sucessfull_go()
         {
             MessageBox.Show("Sikeres Kijárási kérelem.", "Kijárás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public void DataError()
+        {
+            MessageBox.Show("Nincs vagy nem megfelelöen töltötte ki a mezöket.", "Hitelesités", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

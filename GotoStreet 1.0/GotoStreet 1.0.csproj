@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Samsung\Desktop\publishing\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ProductName>GotoStreet</ProductName>
+    <PublisherName>Albert Attila</PublisherName>
+    <SuiteName>AASOFT</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,7 +53,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9C6A793D6463D0EF602AEB54419270D9C3A49F77</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GotoStreet 1.0_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -73,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticatedNow.cs" />
     <Compile Include="Authenticated_user.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
@@ -124,6 +139,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GotoStreetDataBase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GotoStreetRegistation.cs" />
+    <Compile Include="GotoStreetWriteDatabase.cs" />
     <Compile Include="GotoStreet_Controller.cs" />
     <Compile Include="Help\GotoStreetHelp.cs" />
     <Compile Include="Help\GotoStreetHelpForm.cs">
@@ -151,6 +168,7 @@
     <Compile Include="police.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="PrintClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs">
@@ -161,6 +179,12 @@
     </Compile>
     <Compile Include="user.cs">
       <DependentUpon>GotoStreetDataBase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAuthenticated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAuthenticated.Designer.cs">
+      <DependentUpon>UserAuthenticated.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface.cs">
       <SubType>Form</SubType>
@@ -192,6 +216,9 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserAuthenticated.resx">
+      <DependentUpon>UserAuthenticated.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface.resx">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +233,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GotoStreetDataBase.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GotoStreet 1.0_TemporaryKey.pfx" />
     <None Include="GotoStreetDataBase.edmx.diagram">
       <DependentUpon>GotoStreetDataBase.edmx</DependentUpon>
     </None>

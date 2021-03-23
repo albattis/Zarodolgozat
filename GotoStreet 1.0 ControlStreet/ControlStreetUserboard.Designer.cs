@@ -56,6 +56,7 @@
             this.oksearch_label = new System.Windows.Forms.Label();
             this.date_Search_textbox = new System.Windows.Forms.TextBox();
             this.ok_search_textbox = new System.Windows.Forms.TextBox();
+            this.hitelesitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ControlStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ControlStreetGridView)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +93,8 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.elfogadottKijárásokToolStripMenuItem,
             this.elutasitottKijárásokToolStripMenuItem,
-            this.keresésToolStripMenuItem});
+            this.keresésToolStripMenuItem,
+            this.hitelesitésToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
             this.toolStripMenuItem1.Text = "Kijárások";
@@ -100,14 +102,14 @@
             // elfogadottKijárásokToolStripMenuItem
             // 
             this.elfogadottKijárásokToolStripMenuItem.Name = "elfogadottKijárásokToolStripMenuItem";
-            this.elfogadottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.elfogadottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.elfogadottKijárásokToolStripMenuItem.Text = "Elfogadott Kijárások";
             this.elfogadottKijárásokToolStripMenuItem.Click += new System.EventHandler(this.ElfogadottKijárásokToolStripMenuItem_Click);
             // 
             // elutasitottKijárásokToolStripMenuItem
             // 
             this.elutasitottKijárásokToolStripMenuItem.Name = "elutasitottKijárásokToolStripMenuItem";
-            this.elutasitottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.elutasitottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.elutasitottKijárásokToolStripMenuItem.Text = "Elutasitott Kijárások";
             this.elutasitottKijárásokToolStripMenuItem.Click += new System.EventHandler(this.ElutasitottKijárásokToolStripMenuItem_Click);
             // 
@@ -118,7 +120,7 @@
             this.dátumAlapjánToolStripMenuItem,
             this.kijárásiOkAlapjánToolStripMenuItem});
             this.keresésToolStripMenuItem.Name = "keresésToolStripMenuItem";
-            this.keresésToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.keresésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.keresésToolStripMenuItem.Text = "Keresés";
             // 
             // idAlapjánToolStripMenuItem
@@ -280,6 +282,13 @@
             this.ok_search_textbox.Size = new System.Drawing.Size(75, 20);
             this.ok_search_textbox.TabIndex = 10;
             // 
+            // hitelesitésToolStripMenuItem
+            // 
+            this.hitelesitésToolStripMenuItem.Name = "hitelesitésToolStripMenuItem";
+            this.hitelesitésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hitelesitésToolStripMenuItem.Text = "Hitelesités";
+            this.hitelesitésToolStripMenuItem.Click += new System.EventHandler(this.HitelesitésToolStripMenuItem_Click);
+            // 
             // ControlStreetUserboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,5 +347,6 @@
         private System.Windows.Forms.TextBox ok_search_textbox;
         private System.Windows.Forms.ToolStripMenuItem regisztrációToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regisztrációToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem hitelesitésToolStripMenuItem;
     }
 }

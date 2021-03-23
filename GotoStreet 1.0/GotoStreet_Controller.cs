@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 
 namespace GotoStreet_1._0
 {
-    class GotoStreet_Controller
+    public class GotoStreet_Controller
     {
         private readonly string[] Ok = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
         private readonly GotoStreetError error = new GotoStreetError();
@@ -35,6 +34,7 @@ namespace GotoStreet_1._0
             Date = dateTime;
 
         }
+
 
         private bool CheckDate()
         {

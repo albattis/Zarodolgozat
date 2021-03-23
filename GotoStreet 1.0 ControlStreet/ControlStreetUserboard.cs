@@ -5,41 +5,19 @@ namespace GotoStreet_1._0_ControlStreet
 {
     public partial class ControlStreetUserboard : Form
 
-       
+
     {
-       readonly ControlStreetUser User;
-       readonly ControlStreetMessage Mess = new ControlStreetMessage();
+        readonly ControlStreetUser User;
+        
 
-       
-        private void QueryTrue(string status)
+        private void QuerySearch(string type, string mode)
         {
-            ControlStreetGridView.Rows.Clear();
-            var context = new gotoStreetEntities();
-            foreach (var item in context.user)
-            {
-                if (item.police_id.Equals(User.Ids))
-                {
-                    var context2 = new gotoStreetEntities();
-                    foreach (var item2 in context2.gotoStreet)
-                    {
-                        if (item.userid.Equals(item2.userid)&&item2.status==status)
-                        {
-                           
-                            ControlStreetGridView.Rows.Add((item.firstname + " " + item.lastname), item2.go_date, item2.cel, item.userid, item2.status);
-                        }
-                    }
-                
-                }
-            }
-            ControlStreetGridView.Show();
-        }
 
-        private void QuerySearch(string type,string mode)
-        {
+            ControlStreetMessage Mess = new ControlStreetMessage();
+
             try
             {
                 var context = new gotoStreetEntities();
-                ControlStreetGridView.Rows.Clear();
 
                 switch (type)
                 {
@@ -86,7 +64,63 @@ namespace GotoStreet_1._0_ControlStreet
             {
                 Mess.DataError();
             }
-}
+            ControlStreetGridView.Show();
+        }
+
+
+        private void QueryTrue(string status, int id)
+        {
+            DataGridView gv = new DataGridView();
+            gv.ColumnCount = 5;
+            using (var context = new gotoStreetEntities())
+            {
+                foreach (var item in context.user)
+                {
+                    if (item.police_id.Equals(id))
+                    {
+                        var context2 = new gotoStreetEntities();
+                        foreach (var item2 in context2.gotoStreet)
+                        {
+                            if (item.userid.Equals(item2.userid) && item2.status == status)
+                            {
+
+                                ControlStreetGridView.Rows.Add((item.firstname + " " + item.lastname), item2.go_date, item2.cel, item.userid, item2.status);
+                            }
+                        }
+
+                    }
+                }
+            }
+            ControlStreetGridView.Show();
+        }
+
+        private void GridClear()
+        {
+            ControlStreetGridView.Rows.Clear();
+        }
+
+        private void QueryAuthenticated()
+        {
+
+
+            var context = new gotoStreetEntities();
+
+            foreach (var item in context.Authenticated_user)
+            {
+                if (item.status.Equals("no"))
+                {
+                    foreach (var item2 in context.user)
+                    {
+                        if (item.userid == item2.userid)
+                        {
+                            ControlStreetGridView.Rows.Add((item2.firstname + " " + item2.lastname), " ", " ", item2.userid, item.status);
+                        }
+                    }
+                }
+            }
+
+            ControlStreetGridView.Show();
+        }
         public ControlStreetUserboard(string[] users)
         {
             InitializeComponent();
@@ -97,7 +131,7 @@ namespace GotoStreet_1._0_ControlStreet
             {
                 regisztrációToolStripMenuItem.Visible = true;
             }
-            else 
+            else
             {
                 regisztrációToolStripMenuItem1.Visible = false;
             }
@@ -110,38 +144,52 @@ namespace GotoStreet_1._0_ControlStreet
 
         private void ElfogadottKijárásokToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QueryTrue("Elfogadva");
+            GridClear();
+           QueryTrue("Elfogadva", User.Ids);
+           
         }
 
         private void Hidden_button_Click(object sender, EventArgs e)
         {
-            ControlStreetGridView.Rows.Clear();
+            GridClear();
         }
 
         private void ElutasitottKijárásokToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QueryTrue("Elutasitva");
+            GridClear();
+            QueryTrue("Elutasitva", User.Ids);
+            
         }
-
+        
         private void IdAlapjánToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GridClear();
             QuerySearch("Id",idsearch_textbox.Text);
         }
 
         private void DátumAlapjánToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GridClear();
             QuerySearch("Dátum", date_Search_textbox.Text);
         }
 
         private void KijárásiOkAlapjánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QuerySearch("Ok",ok_search_textbox.Text);
+            GridClear();
+           QuerySearch("Ok",ok_search_textbox.Text);
         }
 
         private void RegisztrációToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ControlStreetRegistration cr = new ControlStreetRegistration();
             cr.Show();
+        }
+
+        private void HitelesitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GridClear();
+           QueryAuthenticated();
+            
         }
     }
 }

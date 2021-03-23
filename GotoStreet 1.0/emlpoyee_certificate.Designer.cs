@@ -72,11 +72,7 @@
             this.button_print.Text = "Nyomtatás";
             this.button_print.UseVisualStyleBackColor = true;
             this.button_print.Click += new System.EventHandler(this.Button_print_Click);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument1_PrintPage);
-            // 
+             // 
             // emlpoyee_certificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

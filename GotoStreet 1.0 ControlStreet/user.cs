@@ -26,10 +26,11 @@ namespace GotoStreet_1._0_ControlStreet
         public string firstname { get; set; }
         public string lastname { get; set; }
         public int userid { get; set; }
-        public int police_id { get; set; }
+        public Nullable<int> police_id { get; set; }
     
         public virtual city city { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<gotoStreet> gotoStreet { get; set; }
+        public virtual Authenticated_user Authenticated_user { get; set; }
     }
 }

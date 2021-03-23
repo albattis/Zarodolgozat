@@ -6,7 +6,7 @@ namespace GotoStreet_1._0
     public partial class LoginForm : Form
     {
        readonly LoginController LC = new LoginController();
-        private bool Data = false;
+        
         public LoginForm()
         {
             InitializeComponent();
@@ -15,7 +15,7 @@ namespace GotoStreet_1._0
         private void Login_Button_Click(object sender, EventArgs e)
         {
             
-            if (Data=LC.Login(Loginname_Textbox.Text,Pasword_Textbox.Text))
+            if (LC.Login(Loginname_Textbox.Text,Pasword_Textbox.Text))
             {
                 
                 UserInterface UI = new UserInterface(int.Parse(Loginname_Textbox.Text));

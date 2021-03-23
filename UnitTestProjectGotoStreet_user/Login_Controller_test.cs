@@ -1,4 +1,5 @@
-﻿using GotoStreet_1._0;
+﻿using System;
+using GotoStreet_1._0;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProjectGotoStreet_user
@@ -28,4 +29,18 @@ namespace UnitTestProjectGotoStreet_user
         }
     }
 
+    [TestClass]
+    public class GotoStreet_Controller_test
+    {
+        
+        [TestMethod]
+        public void GotoStreet_Controller_testmethod()
+        {
+            GotoStreet_Controller Comt = new GotoStreet_Controller(1,DateTime.Parse("2021.12.01"),"Munka");
+            Assert.AreEqual(true, Comt.FullCheck());
+            Comt = new GotoStreet_Controller(1, DateTime.Parse("2021.12.01"), "asd");
+            Assert.AreEqual(false,Comt.FullCheck());
+            
+        }
+    }
 }

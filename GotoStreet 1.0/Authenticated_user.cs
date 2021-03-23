@@ -18,6 +18,7 @@ namespace GotoStreet_1._0
         public string Mother_name { get; set; }
         public Nullable<System.DateTime> Birth_date { get; set; }
         public string ICN { get; set; }
+        public string status { get; set; }
     
         public virtual user user { get; set; }
     }
