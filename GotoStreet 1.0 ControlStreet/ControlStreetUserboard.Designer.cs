@@ -39,6 +39,7 @@
             this.idAlapjánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dátumAlapjánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kijárásiOkAlapjánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hitelesitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regisztrációToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regisztrációToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ControlStreetGridView = new System.Windows.Forms.DataGridView();
@@ -56,7 +57,12 @@
             this.oksearch_label = new System.Windows.Forms.Label();
             this.date_Search_textbox = new System.Windows.Forms.TextBox();
             this.ok_search_textbox = new System.Windows.Forms.TextBox();
-            this.hitelesitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Authenticated_label = new System.Windows.Forms.Label();
+            this.labelid = new System.Windows.Forms.Label();
+            this.textBox_Authenticated_id = new System.Windows.Forms.TextBox();
+            this.Button_Authenticated = new System.Windows.Forms.Button();
+            this.Authanticated_Data = new System.Windows.Forms.Label();
+            this.Search_Button = new System.Windows.Forms.Button();
             this.ControlStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ControlStreetGridView)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +150,13 @@
             this.kijárásiOkAlapjánToolStripMenuItem.Text = "Kijárási Ok alapján";
             this.kijárásiOkAlapjánToolStripMenuItem.Click += new System.EventHandler(this.KijárásiOkAlapjánToolStripMenuItem_Click);
             // 
+            // hitelesitésToolStripMenuItem
+            // 
+            this.hitelesitésToolStripMenuItem.Name = "hitelesitésToolStripMenuItem";
+            this.hitelesitésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hitelesitésToolStripMenuItem.Text = "Hitelesités";
+            this.hitelesitésToolStripMenuItem.Click += new System.EventHandler(this.HitelesitésToolStripMenuItem_Click);
+            // 
             // regisztrációToolStripMenuItem
             // 
             this.regisztrációToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -208,9 +221,9 @@
             // 
             // Hidden_button
             // 
-            this.Hidden_button.Location = new System.Drawing.Point(111, 301);
+            this.Hidden_button.Location = new System.Drawing.Point(211, 305);
             this.Hidden_button.Name = "Hidden_button";
-            this.Hidden_button.Size = new System.Drawing.Size(520, 27);
+            this.Hidden_button.Size = new System.Drawing.Size(227, 27);
             this.Hidden_button.TabIndex = 2;
             this.Hidden_button.Text = "Táblázat Törlése";
             this.Hidden_button.UseVisualStyleBackColor = true;
@@ -282,12 +295,59 @@
             this.ok_search_textbox.Size = new System.Drawing.Size(75, 20);
             this.ok_search_textbox.TabIndex = 10;
             // 
-            // hitelesitésToolStripMenuItem
+            // Authenticated_label
             // 
-            this.hitelesitésToolStripMenuItem.Name = "hitelesitésToolStripMenuItem";
-            this.hitelesitésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hitelesitésToolStripMenuItem.Text = "Hitelesités";
-            this.hitelesitésToolStripMenuItem.Click += new System.EventHandler(this.HitelesitésToolStripMenuItem_Click);
+            this.Authenticated_label.AutoSize = true;
+            this.Authenticated_label.Location = new System.Drawing.Point(525, 305);
+            this.Authenticated_label.Name = "Authenticated_label";
+            this.Authenticated_label.Size = new System.Drawing.Size(114, 13);
+            this.Authenticated_label.TabIndex = 11;
+            this.Authenticated_label.Text = "Felhasználó Hitelesités";
+            // 
+            // labelid
+            // 
+            this.labelid.AutoSize = true;
+            this.labelid.Location = new System.Drawing.Point(480, 336);
+            this.labelid.Name = "labelid";
+            this.labelid.Size = new System.Drawing.Size(19, 13);
+            this.labelid.TabIndex = 12;
+            this.labelid.Text = "Id:";
+            // 
+            // textBox_Authenticated_id
+            // 
+            this.textBox_Authenticated_id.Location = new System.Drawing.Point(505, 333);
+            this.textBox_Authenticated_id.Name = "textBox_Authenticated_id";
+            this.textBox_Authenticated_id.Size = new System.Drawing.Size(75, 20);
+            this.textBox_Authenticated_id.TabIndex = 13;
+            // 
+            // Button_Authenticated
+            // 
+            this.Button_Authenticated.Location = new System.Drawing.Point(584, 441);
+            this.Button_Authenticated.Name = "Button_Authenticated";
+            this.Button_Authenticated.Size = new System.Drawing.Size(75, 23);
+            this.Button_Authenticated.TabIndex = 14;
+            this.Button_Authenticated.Text = "Hitelesités";
+            this.Button_Authenticated.UseVisualStyleBackColor = true;
+            this.Button_Authenticated.Click += new System.EventHandler(this.Button_Authenticated_Click);
+            // 
+            // Authanticated_Data
+            // 
+            this.Authanticated_Data.AutoSize = true;
+            this.Authanticated_Data.Location = new System.Drawing.Point(618, 330);
+            this.Authanticated_Data.Name = "Authanticated_Data";
+            this.Authanticated_Data.Size = new System.Drawing.Size(97, 13);
+            this.Authanticated_Data.TabIndex = 15;
+            this.Authanticated_Data.Text = "Hitelesitési Adatok:";
+            // 
+            // Search_Button
+            // 
+            this.Search_Button.Location = new System.Drawing.Point(505, 370);
+            this.Search_Button.Name = "Search_Button";
+            this.Search_Button.Size = new System.Drawing.Size(75, 23);
+            this.Search_Button.TabIndex = 16;
+            this.Search_Button.Text = "Keresés";
+            this.Search_Button.UseVisualStyleBackColor = true;
+            this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
             // ControlStreetUserboard
             // 
@@ -295,6 +355,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.Search_Button);
+            this.Controls.Add(this.Authanticated_Data);
+            this.Controls.Add(this.Button_Authenticated);
+            this.Controls.Add(this.textBox_Authenticated_id);
+            this.Controls.Add(this.labelid);
+            this.Controls.Add(this.Authenticated_label);
             this.Controls.Add(this.ok_search_textbox);
             this.Controls.Add(this.date_Search_textbox);
             this.Controls.Add(this.oksearch_label);
@@ -348,5 +414,11 @@
         private System.Windows.Forms.ToolStripMenuItem regisztrációToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regisztrációToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hitelesitésToolStripMenuItem;
+        private System.Windows.Forms.Label Authenticated_label;
+        private System.Windows.Forms.Label labelid;
+        private System.Windows.Forms.TextBox textBox_Authenticated_id;
+        private System.Windows.Forms.Button Button_Authenticated;
+        private System.Windows.Forms.Label Authanticated_Data;
+        private System.Windows.Forms.Button Search_Button;
     }
 }

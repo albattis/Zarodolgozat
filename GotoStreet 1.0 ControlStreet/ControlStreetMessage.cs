@@ -10,6 +10,11 @@ namespace GotoStreet_1._0_ControlStreet
     class ControlStreetMessage
     {
 
+        public void Authenticated_Success()
+        {
+            MessageBox.Show("Sikeres felhasználó hitelesités", "Hitelesités", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void InserSuccess(int id)
         {
             string text = "Felhasználónév: " + id+" Jelszó: A Választott jelszó.";
@@ -40,6 +45,11 @@ namespace GotoStreet_1._0_ControlStreet
         public void DataError()
         {
             MessageBox.Show("Nem adott meg elegendö adatot.", "Adathiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void FormatException()
+        {
+            MessageBox.Show("Nem megfelelő Id-t adott meg", "Konvertálási Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

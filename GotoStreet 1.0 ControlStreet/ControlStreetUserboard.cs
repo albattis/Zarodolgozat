@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GotoStreet_1._0_ControlStreet
@@ -8,29 +10,24 @@ namespace GotoStreet_1._0_ControlStreet
 
     {
         readonly ControlStreetUser User;
+        private int Authenticatedid;
         
 
         private void QuerySearch(string type, string mode)
         {
-
             ControlStreetMessage Mess = new ControlStreetMessage();
-
             try
             {
                 var context = new gotoStreetEntities();
-
                 switch (type)
                 {
                     case ("Id"):
                         foreach (var item in context.gotoStreet)
                         {
-
                             if (item.userid.Equals(int.Parse(mode)))
                             {
-
                                 ControlStreetGridView.Rows.Add(item.user.firstname + " " + item.user.lastname, item.go_date, item.cel, item.Id, item.status);
                             }
-
                         }
                         break;
 
@@ -66,7 +63,6 @@ namespace GotoStreet_1._0_ControlStreet
             }
             ControlStreetGridView.Show();
         }
-
 
         private void QueryTrue(string status, int id)
         {
@@ -121,6 +117,38 @@ namespace GotoStreet_1._0_ControlStreet
 
             ControlStreetGridView.Show();
         }
+        private void Authanticated_Procedure()
+        {
+            ControlStreetMessage Mess = new ControlStreetMessage();
+            using (var context = new gotoStreetEntities())
+            {
+                try
+                {
+                    var user = context.Authenticated_user.Where(s => s.userid == Authenticatedid).First();
+                    user.status = "ok";
+                    context.SaveChanges();
+                    textBox_Authenticated_id.Text = "";
+                    Authanticated_Data.Text = "Felhasználó Adatok:";
+                    Mess.Authenticated_Success();
+                    Authenticatedid = 0;
+                }
+                catch (SqlException) { Mess.InsertError(); }
+            }
+        
+        }
+        private void Authenticated_Wait(int id)
+        {
+            var context = new gotoStreetEntities();
+            foreach (var item in context.Authenticated_user)
+            {
+                Authanticated_Data.Text = "Felhasználó adatai: \n\n" +
+                    "Anyja neve: " + item.Mother_name + " \n\n" +
+                    "Születési Dátum: " + item.Birth_date + "\n\n" +
+                    "Okmání Száma: " + item.ICN;
+            }
+        
+        }
+
         public ControlStreetUserboard(string[] users)
         {
             InitializeComponent();
@@ -190,6 +218,23 @@ namespace GotoStreet_1._0_ControlStreet
             GridClear();
            QueryAuthenticated();
             
+        }
+
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            ControlStreetMessage Mess = new ControlStreetMessage();
+            try
+            {
+                int data = int.Parse(textBox_Authenticated_id.Text);
+                Authenticatedid = data;
+                Authenticated_Wait(data);
+            }
+            catch (FormatException) { Mess.FormatException(); }
+        }
+
+        private void Button_Authenticated_Click(object sender, EventArgs e)
+        {
+            Authanticated_Procedure();
         }
     }
 }
