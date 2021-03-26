@@ -1,5 +1,6 @@
 ﻿using System.Drawing.Printing;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace GotoStreet_1._0
 {
@@ -9,10 +10,9 @@ namespace GotoStreet_1._0
         Label label;
         public void Print(Label labels)
         {
-
             label = labels;
 
-            docToPrint = new System.Drawing.Printing.PrintDocument();
+            docToPrint = new PrintDocument();
             docToPrint.PrintPage += PrintDocument1_PrintPage;
 
             PrintDialog PrintDialog1 = new PrintDialog
@@ -33,12 +33,12 @@ namespace GotoStreet_1._0
 
         private void PrintDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            System.Drawing.Font printFont = new System.Drawing.Font
-        ("Arial", 16, System.Drawing.FontStyle.Regular);
+            Font printFont = new Font
+        ("Arial", 16, FontStyle.Regular);
 
             string print = "Munkáltatoi Igazolás\n " + "\n" + label.Text + "\n" + " \n" + " Nyomtatva a GotoStreet Alkalmazáson keresztül.";
             e.Graphics.DrawString(print, printFont,
-                System.Drawing.Brushes.Black, 10, 10);
+                Brushes.Black, 10, 10);
         }
     }
 }

@@ -124,7 +124,7 @@ namespace GotoStreet_1._0
         private void ElutasitottKijárásokToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GotoStreet_Views.Rows.Clear();
-            GotoStreet_View("elutasitva");
+            GotoStreet_View("elutasítva");
         }
 
         private void ÚjKijárásToolStripMenuItem_Click(object sender, EventArgs e)
