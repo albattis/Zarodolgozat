@@ -51,5 +51,10 @@ namespace GotoStreet_1._0_ControlStreet
         {
             MessageBox.Show("Nem megfelelő Id-t adott meg", "Konvertálási Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        internal void NotFoundAuthenticate()
+        {
+            MessageBox.Show("Nincs Hitelesitendö felhasználó", "Keresés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

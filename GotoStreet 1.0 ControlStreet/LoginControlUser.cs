@@ -1,4 +1,6 @@
-﻿namespace GotoStreet_1._0_ControlStreet
+﻿using System.Linq;
+
+namespace GotoStreet_1._0_ControlStreet
 {
     class LoginControlUser
     {
@@ -58,8 +60,6 @@
         {
             return user;
         }
-
-
 
     }
 }

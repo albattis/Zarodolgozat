@@ -21,9 +21,9 @@ namespace GotoStreet_1._0
 
         private void Authenticate_button_Click(object sender, EventArgs e)
         {
-            string mn = "";
+            string mn =textBox_mthn.Text;
             DateTime bd = DateTime.Parse("1000.01.01");
-            string icn = "";
+            string icn =textBox_icn.Text;
             AuthenticatedNow Now = new AuthenticatedNow(id,mn,bd,icn);
         }
     }

@@ -63,6 +63,7 @@
             this.Button_Authenticated = new System.Windows.Forms.Button();
             this.Authanticated_Data = new System.Windows.Forms.Label();
             this.Search_Button = new System.Windows.Forms.Button();
+            this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
             this.ControlStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ControlStreetGridView)).BeginInit();
             this.SuspendLayout();
@@ -86,11 +87,12 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // kilépésToolStripMenuItem
             // 
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.KilépésToolStripMenuItem_Click);
             // 
@@ -168,7 +170,7 @@
             // regisztrációToolStripMenuItem1
             // 
             this.regisztrációToolStripMenuItem1.Name = "regisztrációToolStripMenuItem1";
-            this.regisztrációToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.regisztrációToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.regisztrációToolStripMenuItem1.Text = "Regisztráció";
             this.regisztrációToolStripMenuItem1.Click += new System.EventHandler(this.RegisztrációToolStripMenuItem1_Click);
             // 
@@ -349,12 +351,20 @@
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
             // 
+            // dateTimePicker_date
+            // 
+            this.dateTimePicker_date.Location = new System.Drawing.Point(281, 402);
+            this.dateTimePicker_date.Name = "dateTimePicker_date";
+            this.dateTimePicker_date.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_date.TabIndex = 17;
+            // 
             // ControlStreetUserboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 493);
+            this.Controls.Add(this.dateTimePicker_date);
             this.Controls.Add(this.Search_Button);
             this.Controls.Add(this.Authanticated_Data);
             this.Controls.Add(this.Button_Authenticated);
@@ -420,5 +430,6 @@
         private System.Windows.Forms.Button Button_Authenticated;
         private System.Windows.Forms.Label Authanticated_Data;
         private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_date;
     }
 }

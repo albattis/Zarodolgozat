@@ -11,8 +11,6 @@ namespace GotoStreet_1._0
 
         private readonly int id;
 
-
-
         private bool CheckTry()
         {
             bool data = false;
@@ -34,8 +32,6 @@ namespace GotoStreet_1._0
             Date = dateTime;
 
         }
-
-
         private bool CheckDate()
         {
             if (Date > DateTime.Now.Date)
@@ -44,7 +40,6 @@ namespace GotoStreet_1._0
             }
             else { error.DateError(); return false; }
         }
-
         private bool CheckGo()
         {
             int Count = 0;
@@ -58,7 +53,6 @@ namespace GotoStreet_1._0
             { error.GotoStreetErrors(); return false; }
             else { return true; }
         }
-
         public bool FullCheck()
         {
             if (CheckDate() && CheckGo() && CheckTry())

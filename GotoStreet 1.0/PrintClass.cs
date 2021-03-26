@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace GotoStreet_1._0
 {
     class PrintClass
     {
-        private System.Drawing.Printing.PrintDocument docToPrint;
+        private PrintDocument docToPrint;
         Label label;
         public void Print(Label labels)
         {
@@ -35,7 +31,7 @@ namespace GotoStreet_1._0
 
         }
 
-        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void PrintDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             System.Drawing.Font printFont = new System.Drawing.Font
         ("Arial", 16, System.Drawing.FontStyle.Regular);

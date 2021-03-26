@@ -33,6 +33,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasználóiAdataimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.felhasználóiRegisztrációToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.engedélyezettKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elutasitottKijárásokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.userdatas = new System.Windows.Forms.Label();
             this.usedata_button = new System.Windows.Forms.Button();
             this.Authenticated_label = new System.Windows.Forms.Label();
-            this.felhasználóiRegisztrációToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GotoStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GotoStreet_Views)).BeginInit();
             this.SuspendLayout();
@@ -81,16 +81,23 @@
             // felhasználóiAdataimToolStripMenuItem
             // 
             this.felhasználóiAdataimToolStripMenuItem.Name = "felhasználóiAdataimToolStripMenuItem";
-            this.felhasználóiAdataimToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.felhasználóiAdataimToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.felhasználóiAdataimToolStripMenuItem.Text = "Felhasználói adataim";
             this.felhasználóiAdataimToolStripMenuItem.Click += new System.EventHandler(this.FelhasználóiAdataimToolStripMenuItem_Click);
             // 
             // kilépésToolStripMenuItem
             // 
             this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.KilépésToolStripMenuItem_Click);
+            // 
+            // felhasználóiRegisztrációToolStripMenuItem
+            // 
+            this.felhasználóiRegisztrációToolStripMenuItem.Name = "felhasználóiRegisztrációToolStripMenuItem";
+            this.felhasználóiRegisztrációToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.felhasználóiRegisztrációToolStripMenuItem.Text = "Hitelesités";
+            this.felhasználóiRegisztrációToolStripMenuItem.Click += new System.EventHandler(this.FelhasználóiRegisztrációToolStripMenuItem_Click);
             // 
             // kijárásokToolStripMenuItem
             // 
@@ -235,15 +242,9 @@
             this.Authenticated_label.ForeColor = System.Drawing.Color.Coral;
             this.Authenticated_label.Location = new System.Drawing.Point(293, 89);
             this.Authenticated_label.Name = "Authenticated_label";
-            this.Authenticated_label.Size = new System.Drawing.Size(0, 20);
+            this.Authenticated_label.Size = new System.Drawing.Size(216, 20);
             this.Authenticated_label.TabIndex = 6;
-            // 
-            // felhasználóiRegisztrációToolStripMenuItem
-            // 
-            this.felhasználóiRegisztrációToolStripMenuItem.Name = "felhasználóiRegisztrációToolStripMenuItem";
-            this.felhasználóiRegisztrációToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.felhasználóiRegisztrációToolStripMenuItem.Text = "Felhasználói Regisztráció";
-            this.felhasználóiRegisztrációToolStripMenuItem.Click += new System.EventHandler(this.FelhasználóiRegisztrációToolStripMenuItem_Click);
+            this.Authenticated_label.Text = "Nem hitelesitett felhasználó";
             // 
             // UserInterface
             // 

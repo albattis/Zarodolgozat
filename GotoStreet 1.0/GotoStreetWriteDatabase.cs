@@ -16,7 +16,7 @@ namespace GotoStreet_1._0
             string status;
             if (GSC.FullCheck())
             { status = "Elfogadva"; }
-            else { status = "Elutasitva"; }
+            else { status = "Elutasítva"; }
             try
             {
                 gotoStreet gotoStreet = new gotoStreet

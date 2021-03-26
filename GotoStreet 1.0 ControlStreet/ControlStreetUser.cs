@@ -24,8 +24,26 @@ namespace GotoStreet_1._0_ControlStreet
             Names = users[0];
             Employees = users[1];
             Ids = int.Parse(users[2]);
+            UserWorkDataWrite("Login");
         }
+        public void UserWorkDataWrite(string works)
+        {
+            using (var context = new policeusersEntities())
+            {
+                pworks work = new pworks
+                {
+                    Id = context.pworks.Count() + 1,
+                    userid = Id,
+                    work = works,
+                    login_date = DateTime.Now.Date
+                };
 
-        
+                pworks n = work;
+                context.pworks.Add(n);
+                context.SaveChanges();
+        }
     }
+
+
+}
 }

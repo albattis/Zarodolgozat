@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="policeusersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="policeusersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="errors">
           <Key>
             <PropertyRef Name="bejegyzes_Id" />
@@ -22,7 +22,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="employee" Type="varchar" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="150" />
           <Property Name="officeid" Type="int" />
         </EntityType>
         <EntityType Name="pworks">
@@ -33,16 +33,13 @@
           <Property Name="userid" Type="int" />
           <Property Name="work" Type="varchar" MaxLength="50" />
           <Property Name="login_date" Type="datetime" />
-          <Property Name="logintimehour" Type="int" />
-          <Property Name="loginexithour" Type="int" />
         </EntityType>
         <EntityContainer Name="policeusersModelStoreContainer">
           <EntitySet Name="errors" EntityType="Self.errors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="puser" EntityType="Self.puser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pworks" EntityType="Self.pworks" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="policeusersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -66,6 +63,11 @@
           <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="officeid" Type="Int32" />
         </EntityType>
+        <EntityContainer Name="policeusersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="errors" EntityType="Self.errors" />
+          <EntitySet Name="puser" EntityType="Self.puser" />
+          <EntitySet Name="pworks" EntityType="policeusersModel.pworks" />
+        </EntityContainer>
         <EntityType Name="pworks">
           <Key>
             <PropertyRef Name="Id" />
@@ -74,14 +76,7 @@
           <Property Name="userid" Type="Int32" />
           <Property Name="work" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="login_date" Type="DateTime" Precision="3" />
-          <Property Name="logintimehour" Type="Int32" />
-          <Property Name="loginexithour" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="policeusersEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="errors" EntityType="Self.errors" />
-          <EntitySet Name="puser" EntityType="Self.puser" />
-          <EntitySet Name="pworks" EntityType="Self.pworks" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -113,12 +108,10 @@
           <EntitySetMapping Name="pworks">
             <EntityTypeMapping TypeName="policeusersModel.pworks">
               <MappingFragment StoreEntitySet="pworks">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="userid" ColumnName="userid" />
-                <ScalarProperty Name="work" ColumnName="work" />
                 <ScalarProperty Name="login_date" ColumnName="login_date" />
-                <ScalarProperty Name="logintimehour" ColumnName="logintimehour" />
-                <ScalarProperty Name="loginexithour" ColumnName="loginexithour" />
+                <ScalarProperty Name="work" ColumnName="work" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -24,20 +24,17 @@ namespace GotoStreet_1._0
             userdatas.Visible = false;
             usedata_button.Visible = false;
             var context = new gotoStreetEntities1();
+            bool cheked = true;
             foreach (var item in context.Authenticated_user)
             {
-                if (id.Equals(item.userid))
+                if (id.Equals(item.userid) && cheked)
                 {
-                    Authenticated_label.Text = "Regisztrált Felhasználó";
+                    Authenticated_label.Text = "Hitelesitett Felhasználó";
                     felhasználóiRegisztrációToolStripMenuItem.Visible = false;
+                    cheked = false;
 
                 }
-                else
-                {
-                    Authenticated_label.Text = "Nem Regisztrált Felhasználó";
-                    munkáltatóiIgazolásToolStripMenuItem.Visible = false;
-                    felhasználóiRegisztrációToolStripMenuItem.Visible = true;
-                }
+                
             }
 
         }

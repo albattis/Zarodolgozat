@@ -133,6 +133,7 @@ namespace GotoStreet_1._0_ControlStreet
                     Authenticatedid = 0;
                 }
                 catch (SqlException) { Mess.InsertError(); }
+                catch (InvalidOperationException) { Mess.NotFoundAuthenticate(); }
             }
         
         }
@@ -152,6 +153,7 @@ namespace GotoStreet_1._0_ControlStreet
         public ControlStreetUserboard(string[] users)
         {
             InitializeComponent();
+            
             ControlStreetGridView.ColumnCount = 5;
             User = new ControlStreetUser(users);
             Welcome_label.Text = "Üdvözlöm kedves: " + User.Names;
@@ -174,7 +176,8 @@ namespace GotoStreet_1._0_ControlStreet
         {
             GridClear();
            QueryTrue("Elfogadva", User.Ids);
-           
+            User.UserWorkDataWrite("Okgotostreet");
+
         }
 
         private void Hidden_button_Click(object sender, EventArgs e)
@@ -186,6 +189,7 @@ namespace GotoStreet_1._0_ControlStreet
         {
             GridClear();
             QueryTrue("Elutasitva", User.Ids);
+            User.UserWorkDataWrite("Nogotostreet");
             
         }
         
@@ -235,6 +239,12 @@ namespace GotoStreet_1._0_ControlStreet
         private void Button_Authenticated_Click(object sender, EventArgs e)
         {
             Authanticated_Procedure();
+            User.UserWorkDataWrite("Authanticate");
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

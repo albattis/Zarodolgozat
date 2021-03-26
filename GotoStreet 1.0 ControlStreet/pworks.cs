@@ -18,7 +18,5 @@ namespace GotoStreet_1._0_ControlStreet
         public Nullable<int> userid { get; set; }
         public string work { get; set; }
         public Nullable<System.DateTime> login_date { get; set; }
-        public Nullable<int> logintimehour { get; set; }
-        public Nullable<int> loginexithour { get; set; }
     }
 }
