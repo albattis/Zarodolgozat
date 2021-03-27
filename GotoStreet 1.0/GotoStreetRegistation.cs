@@ -23,7 +23,7 @@ namespace GotoStreet_1._0
         private readonly TextBox TextBox_password;
         private readonly TextBox TextBox_repassword;
 
-
+            
         public GotoStreetRegistation(
             TextBox fn,
             TextBox ln,
