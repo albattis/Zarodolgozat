@@ -118,11 +118,7 @@ namespace GotoStreet_1._0
                 return true;
             }
             catch (FormatException) { Error.Registration_formatError(); return false; }
-            
-
-
         }
-
         public bool Registration()
         {
             if (Controll() && PasswordControll())

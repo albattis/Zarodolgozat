@@ -25,18 +25,16 @@ namespace GotoStreet_1._0_Company
         {
             using (var context = new Company_registerEntities1())
             {
-                foreach (var item in context.Company)
-                    if (item.company_id.Equals(CompId))
+                foreach (var item in context. Company)
+                    if (item. company_id. Equals ( CompId ) )
                     {
                         name = item.name;
                         BossName = item.Company_manager;
-                        Adoszam = item.adoszam;
+                        Adoszam = (int)item.adoszam;
                     }
 
             }
         }
-
-
         public CompanyBoard(int id)
         {
             InitializeComponent();
@@ -44,11 +42,16 @@ namespace GotoStreet_1._0_Company
             CompanyData();
             Company_information.Text = "Cég adatai: Név: " + name + "\n Adószám: " + Adoszam + "\n Cégvezetö neve: " + BossName; ;
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
-            try { Certification.CertificationControlId(int.Parse(Id_textbox.Text)); }
-            catch (FormatException) { Return_label.ForeColor = System.Drawing.Color.Red;Return_label.Text = "Nem létező ID!"; }
+            try 
+            {
+                Certification.CertificationControlId(int.Parse(Id_textbox.Text));
+            }
+            catch (FormatException) 
+            {
+                Return_label.ForeColor = System.Drawing.Color.Red;Return_label.Text = "Nem létező ID!"; 
+            }
             if (Certification.IdsControl)
             {
                 Return_label.ForeColor = System.Drawing.Color.Green; Return_label.Text = "Létező ID!";
@@ -59,31 +62,30 @@ namespace GotoStreet_1._0_Company
                 Insert_button.Visible = false;
             }
         }
-
         private void Delete_button_Click(object sender, EventArgs e)
         {
             Certification.IdsControl = false;
             Id_textbox.Text = "";
             Return_label.Text = "Adatok törölve.";
         }
-
         private void Insert_button_Click(object sender, EventArgs e)
         {
+            ErrorMessage Mess = new ErrorMessage();
             Certification.InsertControl(CompanyId);
             if (Certification.InsContr)
             {
-                MessageBox.Show("Sikeres a Kijárási dokumentum elküldése");
+                Mess.SuccessCertification();
             }
             else {
-                MessageBox.Show("Sikertelen a Kijárási dokumentum elküldése");
+                Mess.UnSuccessCertification();
             }
         }
-
         private void Delete_certificate_Click(object sender, EventArgs e)
         {
+            ErrorMessage Mess = new ErrorMessage();
             if (Certification.Delete_Certification())
             {
-                MessageBox.Show("Sikeresen törölte a dolgozó kijárási igazolását.", "Törlés megerösités", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mess.DeleteCertification();
             }
         }
     }

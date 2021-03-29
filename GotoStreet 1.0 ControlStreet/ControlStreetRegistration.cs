@@ -53,7 +53,10 @@ namespace GotoStreet_1._0_ControlStreet
                 if (data)
                 { Mess.InsertSuccessfull();Mess.InserSuccess(id); }
                 else { Mess.InsertError(); }
-                
+                name_textbox.Text = "";
+                password_textbox.Text = "";
+                employee_textbox.Text = "";
+                policeid_textbox.Text = "";
             }
             catch (DbEntityValidationException ) { Mess.InsertError(); }
             }

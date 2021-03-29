@@ -66,8 +66,6 @@ namespace GotoStreet_1._0_ControlStreet
 
         private void QueryTrue(string status, int id)
         {
-            DataGridView gv = new DataGridView();
-            gv.ColumnCount = 5;
             using (var context = new gotoStreetEntities())
             {
                 foreach (var item in context.user)
@@ -139,15 +137,20 @@ namespace GotoStreet_1._0_ControlStreet
         }
         private void Authenticated_Wait(int id)
         {
-            var context = new gotoStreetEntities();
-            foreach (var item in context.Authenticated_user)
+            try
             {
-                Authanticated_Data.Text = "Felhasználó adatai: \n\n" +
-                    "Anyja neve: " + item.Mother_name + " \n\n" +
-                    "Születési Dátum: " + item.Birth_date + "\n\n" +
-                    "Okmání Száma: " + item.ICN;
+                using (var context = new gotoStreetEntities())
+                {
+                    foreach (var item in context.Authenticated_user)
+                    {
+                        Authanticated_Data.Text = "Felhasználó adatai: \n\n" +
+                            "Anyja neve: " + item.Mother_name + " \n\n" +
+                            "Születési Dátum: " + item.Birth_date + "\n\n" +
+                            "Okmány Száma: " + item.ICN;
+                    }
+                }
             }
-        
+            catch (SqlException) { Authanticated_Data.Text = "Nincs megjelenithető adat."; }
         }
 
         public ControlStreetUserboard(string[] users)
@@ -235,16 +238,10 @@ namespace GotoStreet_1._0_ControlStreet
             }
             catch (FormatException) { Mess.FormatException(); }
         }
-
         private void Button_Authenticated_Click(object sender, EventArgs e)
         {
             Authanticated_Procedure();
             User.UserWorkDataWrite("Authanticate");
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

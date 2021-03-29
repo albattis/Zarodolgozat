@@ -26,7 +26,7 @@ namespace GotoStreet_1._0_ControlStreet
         private void Login_button_Click(object sender, EventArgs e)
         {
             LoginControlUser LU = new LoginControlUser(Username_textbox.Text, Password_textbox.Text);
-                if(LU.Successfully())
+            if(LU.Successfully())
             {
                 user = LU.ReturnUser();
                 ControlStreetUserboard Usb = new ControlStreetUserboard(user);

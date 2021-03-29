@@ -4,7 +4,7 @@ namespace GotoStreet_1._0_ControlStreet
 {
     class LoginControlUser
     {
-        private readonly PasswordHash PH = new PasswordHash();
+       
         private readonly ControlStreetMessage Message = new ControlStreetMessage();
 
         private string Username { get; set; }
@@ -27,8 +27,8 @@ namespace GotoStreet_1._0_ControlStreet
 
         private void Login()
         {
-
-            var context = new policeusersEntities();
+              PasswordHash PH = new PasswordHash();
+        var context = new policeusersEntities();
             foreach (var item in context.puser)
             {
                 if (int.Parse(Username).Equals(item.Id))

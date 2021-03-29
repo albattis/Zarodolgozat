@@ -33,7 +33,7 @@ namespace GotoStreet_1._0
             this.axAcroPDF1 = new AxAcroPDFLib.AxAcroPDF();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Open_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axAcroPDF1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +60,15 @@ namespace GotoStreet_1._0
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button1
+            // Open_Button
             // 
-            this.button1.Location = new System.Drawing.Point(99, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Megnyitás";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Open_Button.Location = new System.Drawing.Point(99, 74);
+            this.Open_Button.Name = "Open_Button";
+            this.Open_Button.Size = new System.Drawing.Size(75, 23);
+            this.Open_Button.TabIndex = 2;
+            this.Open_Button.Text = "Megnyitás";
+            this.Open_Button.UseVisualStyleBackColor = true;
+            this.Open_Button.Click += new System.EventHandler(this.button1_Click);
             // 
             // DocumentViewer
             // 
@@ -76,7 +76,7 @@ namespace GotoStreet_1._0
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Open_Button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.axAcroPDF1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -93,6 +93,6 @@ namespace GotoStreet_1._0
         private AxAcroPDFLib.AxAcroPDF axAcroPDF1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Open_Button;
     }
 }

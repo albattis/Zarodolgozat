@@ -17,7 +17,7 @@ namespace GotoStreet_1._0_Company
         public int Id { get; set; }
         public string name { get; set; }
         public Nullable<int> company_id { get; set; }
-        public int adoszam { get; set; }
+        public Nullable<int> adoszam { get; set; }
         public string Company_manager { get; set; }
         public string password { get; set; }
     }

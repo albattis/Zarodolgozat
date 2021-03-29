@@ -1,9 +1,12 @@
 ﻿
+using System;
+using System.Data.SqlClient;
+
 namespace GotoStreet_1._0_Company
 {
     class CompanyController
     {
-        private readonly PasswordHash PS = new PasswordHash();
+       
         private readonly ErrorMessage Message = new ErrorMessage();
         
         private readonly string username;
@@ -27,6 +30,7 @@ namespace GotoStreet_1._0_Company
                     {
                         if (item.company_id.Equals(int.Parse(username)))
                         {
+                            PasswordHash PS = new PasswordHash();
                             string x = PS.Sha256(password);
                             if (x.Equals(item.password))
                             {
@@ -37,8 +41,8 @@ namespace GotoStreet_1._0_Company
                     }
                 }
             }
-            catch (System.Data.SqlClient.SqlException) { Message.SqlError(); }
-            
+            catch (SqlException) { Message.SqlError(); }
+            catch (FormatException) { Message.LoginError(); }
             }
 
         public bool ReturnLogin()

@@ -69,14 +69,18 @@ namespace GotoStreet_1._0_Company
 
         public bool Delete_Certification()
         {
-            using (var context = new Company_registerEntities1())
+            try
             {
-                Emlpoye_Certificate Em = context.Emlpoye_Certificate.Where(x => x.userid == Id).Single<Emlpoye_Certificate>();
-                context.Emlpoye_Certificate.Remove(Em);
-                context.SaveChanges();
-                return true;
+                using (var context = new Company_registerEntities1())
+                {
+                    Emlpoye_Certificate Em = context.Emlpoye_Certificate.Where(x => x.userid == Id).Single<Emlpoye_Certificate>();
+                    context.Emlpoye_Certificate.Remove(Em);
+                    context.SaveChanges();
+                    return true;
 
+                }
             }
+            catch (DbUpdateException) { return false; }
         }
 
     }
