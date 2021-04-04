@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace GotoStreet_1._0
 {
-    public class GotoStreet_Controller
+   public class GotoStreet_Controller
     {
         private readonly string[] Ok = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
         private readonly GotoStreetError error = new GotoStreetError();
@@ -34,24 +35,33 @@ namespace GotoStreet_1._0
         }
         private bool CheckDate()
         {
-            if (Date > DateTime.Now.Date)
+            try
             {
-                return true;
+                if (Date > DateTime.Now.Date)
+                {
+                    return true;
+                }
+                else { error.DateError(); return false; }
+
             }
-            else { error.DateError(); return false; }
-        }
+            catch (FormatException) { error.DateError(); return false; }
+            }
         private bool CheckGo()
         {
-            int Count = 0;
-            var context = new gotoStreetEntities1();
-            foreach (var item in context.gotoStreet)
+            try
             {
-                if (item.userid.Equals(id) && item.go_date.Equals(Date))
-                { Count++; }
+                int Count = 0;
+                var context = new gotoStreetEntities1();
+                foreach (var item in context.gotoStreet)
+                {
+                    if (item.userid.Equals(id) && item.go_date.Equals(Date))
+                    { Count++; }
+                }
+                if (Count > 0)
+                { error.GotoStreetErrors(); return false; }
+                else { return true; }
             }
-            if (Count > 0)
-            { error.GotoStreetErrors(); return false; }
-            else { return true; }
+            catch (SqlException) { error.EntityException(); return false; }
         }
         public bool FullCheck()
         {

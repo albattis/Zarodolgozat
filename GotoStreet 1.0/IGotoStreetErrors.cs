@@ -98,5 +98,7 @@ namespace GotoStreet_1._0
         {
             MessageBox.Show("Nincs vagy nem megfelelöen töltötte ki a mezöket.", "Hitelesités", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+       
     }
 }

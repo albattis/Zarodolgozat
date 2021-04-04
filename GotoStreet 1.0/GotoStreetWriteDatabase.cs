@@ -12,11 +12,18 @@ namespace GotoStreet_1._0
     {
         public bool NewGotoStreetWrite(Label Go_Label_date,TextBox TextBox_Date,TextBox TextBox_where,int id)
         {
-            GotoStreet_Controller GSC = new GotoStreet_Controller(id, DateTime.Parse(TextBox_Date.Text), TextBox_where.Text);
-            string status;
-            if (GSC.FullCheck())
-            { status = "Elfogadva"; }
-            else { status = "Elutasítva"; }
+            GotoStreetError Error = new GotoStreetError();
+            string status="";
+            try
+            {
+                GotoStreet_Controller GSC = new GotoStreet_Controller(id, DateTime.Parse(TextBox_Date.Text), TextBox_where.Text);
+                
+                if (GSC.FullCheck())
+                { status = "Elfogadva"; }
+                else { status = "Elutasítva"; }
+            }
+            catch (FormatException) { Error.DateError(); }
+            
             try
             {
                 gotoStreet gotoStreet = new gotoStreet

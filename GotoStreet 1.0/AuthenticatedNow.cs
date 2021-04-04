@@ -9,7 +9,29 @@ namespace GotoStreet_1._0
 
         public AuthenticatedNow(int id, string mn, DateTime bd, string icn)
         {
-            Authenticate(id, mn, bd, icn);  
+            GotoStreetError Error = new GotoStreetError();
+            bool siker = true;
+            if (siker)
+            {
+                var context = new gotoStreetEntities1();
+                foreach (var item in context.Authenticated_user)
+                {
+                    if (id.Equals(item.userid))
+                    {
+                        siker = false;
+                    }
+
+                }
+                if (siker)
+                {
+                    Authenticate(id, mn, bd, icn);
+                    Error.Authenticated_Success();
+                }
+                else
+                {
+                    Error.DataError();
+                }
+            }
         }
             
 

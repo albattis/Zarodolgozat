@@ -50,11 +50,11 @@ namespace GotoStreet_1._0
 
         private bool Controll()
         {
-            if (TextBox_firstname.Text != "" || TextBox_lastname.Text != "")
+            if (TextBox_firstname.Text != "" || TextBox_lastname.Text != null)
             {
-                if (TextBox_zip.Text== "" || TextBox_city.Text == "" ||
-                    TextBox_street.Text == "" || TextBox_place.Text== "" ||
-                    TextBox_housenumber.Text == "")
+                if (TextBox_zip.Text == "" || TextBox_city.Text == "" ||
+                   TextBox_street.Text == "" || TextBox_place.Text == "" ||
+                   TextBox_housenumber.Text == "")
                 { Error.Registration_cityError(); return false; }
                 else { return true; }
             }
