@@ -158,7 +158,7 @@ namespace UnitTestProjectGotoStreet_user
             DateTime time = DateTime.Parse("2021.04.10");
             string trying = "Munka";
             GotoStreet_Controller control = new GotoStreet_Controller(id,time,trying);
-            Assert.AreEqual(true, control.FullCheck());
+            Assert.AreEqual(false, control.FullCheck());
 
             time = DateTime.Parse("2021.02.10");
 
@@ -180,7 +180,7 @@ namespace UnitTestProjectGotoStreet_user
     [TestMethod]
         public void AuthemticatedNow_Testes()
         {
-            int id = 120;
+            int id = 1;
             string mn = "Minta Anna";
             string icn = "111111AA";
             DateTime date = DateTime.Parse("1900.01.01");
@@ -273,7 +273,56 @@ namespace UnitTestProjectGotoStreet_user
         }
 
     } //Jegyzökönyvezve
-   
 
-  
+    [TestClass]
+
+    public class GotoStreetWriteDatabase_test
+    {
+        [TestMethod]
+
+        public void Write_Test()
+        {
+            Label lab = new Label();
+
+            lab.Text = "2021.04.05";
+            TextBox tx = new TextBox();
+            tx.Text = "2021.04.12";
+            TextBox tb = new TextBox();
+            tb.Text = "Munka";
+
+
+            GotoStreetWriteDatabase g = new GotoStreetWriteDatabase();
+            Assert.AreEqual(true,g.NewGotoStreetWrite(lab, tx, tb, 1));
+            Assert.AreEqual(true, g.NewGotoStreetWrite(lab, tx, tb, 1));
+        }
+        
+    }
+
+    [TestClass]
+
+    public class Print_Test
+    {
+
+        [TestMethod]
+
+        public void PrintMethod_Test()
+        {
+
+            PrintClass p = new PrintClass();
+            Label l = new Label();
+            l.Text = "Sikeres nyomtatás";
+            bool result = false;
+            try
+            {
+                p.Print(l);
+                result = true;
+            }
+            catch (Exception) { result = false; }
+
+            Assert.IsTrue(result);
+            
+
+        }
+
+    }
 }

@@ -72,7 +72,7 @@
     <Compile Include="ControlStreetUserboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlStreetUserboard.Designer.cs">
+    <Compile Include="ControlStreetUserboard.designer.cs">
       <DependentUpon>ControlStreetUserboard.cs</DependentUpon>
     </Compile>
     <Compile Include="errors.cs">

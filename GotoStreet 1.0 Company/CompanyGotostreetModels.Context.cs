@@ -10,6 +10,7 @@
 namespace GotoStreet_1._0_Company
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -26,5 +27,6 @@ namespace GotoStreet_1._0_Company
         }
     
         public virtual DbSet<Authenticated_user> Authenticated_user { get; set; }
+        public IEnumerable<object> gotoStreet { get; set; }
     }
 }

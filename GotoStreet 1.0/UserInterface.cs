@@ -71,19 +71,27 @@ namespace GotoStreet_1._0
         }
         private void UserSettings()
         {
-            var context = new gotoStreetEntities1();
-            foreach (var item in context.user)
+            try
             {
-                if (id.Equals(item.userid))
+                using (var context = new gotoStreetEntities1())
                 {
-                    LogUser.Firstnames = item.firstname;
-                    LogUser.Lastnames = item.lastname;
-                    LogUser.Zips = item.city.zip;
-                    LogUser.Citys = item.city.city1;
-                    LogUser.Streets = item.city.street;
-                    LogUser.Places = item.city.place;
-                    LogUser.Housenumbers = item.city.housenumber;
+                    foreach (var item in context.user)
+                    {
+                        if (id.Equals(item.userid))
+                        {
+                            LogUser.Firstnames = item.firstname;
+                            LogUser.Lastnames = item.lastname;
+                            LogUser.Zips = item.city.zip;
+                            LogUser.Citys = item.city.city1;
+                            LogUser.Streets = item.city.street;
+                            LogUser.Places = item.city.place;
+                            LogUser.Housenumbers = item.city.housenumber;
+                        }
+                    }
                 }
+            }
+            catch (NullReferenceException) { GotoStreetError Error = new GotoStreetError();
+                Error.EntityException();
             }
         }
         private void GotoStreet_View(string v)

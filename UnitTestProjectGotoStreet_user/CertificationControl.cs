@@ -33,7 +33,7 @@ namespace GotoStreet_1._0_Company
 
         public void InsertControl(int compid)
         {
-            Insertcontrol = true;
+            Insertcontrol = false;
 
             Emlpoye_Certificate emlpoye_Certificate = new Emlpoye_Certificate
             {
@@ -47,9 +47,9 @@ namespace GotoStreet_1._0_Company
             {
                 foreach (var item in context.Emlpoye_Certificate)
                 {
-                    if (item.userid.Equals(Id))
+                    if (!item.userid.Equals(Id))
                     {
-                        Insertcontrol = false;
+                        Insertcontrol = true;
                     }
                 }
                 if (Insertcontrol)

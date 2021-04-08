@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+
 
 namespace GotoStreet_1._0_Company
 {
@@ -24,7 +26,7 @@ namespace GotoStreet_1._0_Company
 
         private void ControlId()
         {
-            var context = new gotoStreetEntities();
+            var context = new gotoStreetEntities(); 
             foreach (var item in context.Authenticated_user)
             {
                 if (Id.Equals(item.userid)) { IdsControl = true; }
@@ -51,11 +53,15 @@ namespace GotoStreet_1._0_Company
                     {
                         Insertcontrol = false;
                     }
+                    else {
+                        cc.Id = (context.Emlpoye_Certificate.Count() + 1);
+                    }
                 }
                 if (Insertcontrol)
                 {
                     try
                     {
+                        
                         context.Emlpoye_Certificate.Add(cc);
                         context.SaveChanges();
                     }
