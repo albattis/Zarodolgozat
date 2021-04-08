@@ -6,15 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProjectGotoStreetCompany
 {
-    [TestClass]
-    public class UnitTest1
-    {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
-    }
-
+  
     [TestClass]
 
     public class CertificationControl_Test
@@ -93,7 +85,7 @@ namespace UnitTestProjectGotoStreetCompany
             {
                 Teszt.Delete_Certification();
             }
-            catch (Exception e) { result = false; }
+            catch (Exception) { result = false; }
             Assert.AreEqual(true, result);
             id = 1;
             
@@ -104,7 +96,7 @@ namespace UnitTestProjectGotoStreetCompany
             {
                 Teszt.Delete_Certification();
             }
-            catch (Exception e) { result = false; }
+            catch (Exception) { result = false; }
             Assert.AreEqual(false, result);
 
         }
