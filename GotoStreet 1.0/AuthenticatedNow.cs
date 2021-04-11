@@ -10,19 +10,19 @@ namespace GotoStreet_1._0
         public AuthenticatedNow(int id, string mn, DateTime bd, string icn)
         {
             GotoStreetError Error = new GotoStreetError();
-            bool siker = true;
-            if (siker)
+            bool result = true;
+            if (result)
             {
                 var context = new gotoStreetEntities1();
                 foreach (var item in context.Authenticated_user)
                 {
                     if (id.Equals(item.userid))
                     {
-                        siker = false;
+                        result = false;
                     }
 
                 }
-                if (siker)
+                if (result)
                 {
                     Authenticate(id, mn, bd, icn);
                     Error.Authenticated_Success();

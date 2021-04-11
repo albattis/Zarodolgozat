@@ -17,7 +17,7 @@ namespace GotoStreet_1._0
         private int Ids { get; set; }
         private string Usernames { get; set; }
 
-        private bool Data;
+        private bool Data = false;
        
 
         public int Id { get { return Ids; }set { Ids = value; } }
@@ -31,39 +31,37 @@ namespace GotoStreet_1._0
             string passwords = null;
             using (var context = new gotoStreetEntities1())
             {
+                Data = false;
                 try
                 {
                     foreach (var item in context.user)
                     {
-
                         if (item.userid.Equals(int.Parse(id)))
                         {
                             passwords = item.password;
-                            Data = true;
+                            string ControlPassword = PH.Sha256(password);
+
+                            if (ControlPassword.Equals(passwords))
+                            {
+                                Data = true;
+                            }
+                            else
+                            {
+                                Error.PasswordError();
+                            }
                         }
-
                     }
-                }
-                catch (FormatException) { Error.FormatException(); }
-                catch (EntityException) { Error.EntityException(); }
-                if (Data)
-                {
-                    Data = false;
-                    string ControlPassword = PH.Sha256(password);
-
-                    if (ControlPassword.Equals(passwords))
+                    if (!Data)
                     {
-                        Data = true;
+                        Error.LoginnameError();
                     }
-                    else
-                    {
-                        Error.PasswordError();
-                    }
-
-                    return Data;
+            
+                    
                 }
-                else { Error.LoginnameError(); return false; }
+                catch (FormatException) { Error.FormatException();  }
+                catch (EntityException) { Error.EntityException();  }
             }
+            return Data;
         }
 
     }

@@ -10,28 +10,24 @@ namespace GotoStreet_1._0
 {
     class GotoStreetWriteDatabase
     {
-        public bool NewGotoStreetWrite(Label Go_Label_date,TextBox TextBox_Date,TextBox TextBox_where,int id)
+        public bool NewGotoStreetWrite(DateTime record_Date,DateTime Go_Date,string where,int id)
         {
             GotoStreetError Error = new GotoStreetError();
             string status="";
             try
             {
-                GotoStreet_Controller GSC = new GotoStreet_Controller(id, DateTime.Parse(TextBox_Date.Text), TextBox_where.Text);
+                GotoStreet_Controller GSC = new GotoStreet_Controller(id, Go_Date, where);
                 
                 if (GSC.FullCheck())
                 { status = "Elfogadva"; }
                 else { status = "Elutasítva"; }
-            }
-            catch (FormatException) { Error.DateError(); }
             
-            try
-            {
                 gotoStreet gotoStreet = new gotoStreet
                 {
                     userid = id,
-                    record_date = DateTime.Parse(Go_Label_date.Text),
-                    go_date = DateTime.Parse(TextBox_Date.Text),
-                    cel = TextBox_where.Text.Trim(),
+                    record_date = record_Date,
+                    go_date = Go_Date,
+                    cel = where,
                     status = status
                 };
                 gotoStreet gt = gotoStreet;

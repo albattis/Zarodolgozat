@@ -30,7 +30,7 @@ namespace GotoStreet_1._0_Company
                     {
                         name = item.name;
                         BossName = item.Company_manager;
-                        Adoszam = (int)item.adoszam;
+                        Adoszam = (int)item.Tax_Number;
                     }
 
             }
@@ -60,6 +60,8 @@ namespace GotoStreet_1._0_Company
             else
             {
                 Insert_button.Visible = false;
+                Return_label.ForeColor = System.Drawing.Color.Red; Return_label.Text = "Nem létező ID!";
+
             }
         }
         private void Delete_button_Click(object sender, EventArgs e)

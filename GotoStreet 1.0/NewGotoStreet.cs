@@ -21,10 +21,26 @@ namespace GotoStreet_1._0
 
         private void Button_write_Click(object sender, EventArgs e)
         {
-           GotoStreetWriteDatabase GSDW = new GotoStreetWriteDatabase();
-           GotoStreetError Error = new GotoStreetError();
+            GotoStreetError Error = new GotoStreetError();
+            DateTime record_date = DateTime.Parse("2000.01.01");
+            DateTime go_Date= DateTime.Parse("2000.01.01"); 
+            string where="";
+            try
+            {
+                record_date = DateTime.Parse(Go_Label_date.Text);
+                go_Date = DateTime.Parse(TextBox_Date.Text);
+                where = TextBox_where.Text;
+            }
+            catch(FormatException)
+            {
+                Error.FormatException();
+            }
 
-            if (GSDW.NewGotoStreetWrite(Go_Label_date, TextBox_Date, TextBox_where, id))
+
+           GotoStreetWriteDatabase GSDW = new GotoStreetWriteDatabase();
+           
+           
+            if (GSDW.NewGotoStreetWrite(record_date, go_Date, where, id))
             { Error.Sucessfull_go(); }
         }
         private void Escape_Click(object sender, EventArgs e)

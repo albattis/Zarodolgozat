@@ -41,7 +41,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="company_id" Type="Int32" />
-          <Property Name="adoszam" Type="Int32" />
+          <Property Name="Tax_Number" Type="Int32" />
           <Property Name="Company_manager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -70,7 +70,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="company_id" ColumnName="company_id" />
-                <ScalarProperty Name="adoszam" ColumnName="adoszam" />
+                <ScalarProperty Name="Tax_Number" ColumnName="adoszam" />
                 <ScalarProperty Name="Company_manager" ColumnName="Company_manager" />
                 <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>

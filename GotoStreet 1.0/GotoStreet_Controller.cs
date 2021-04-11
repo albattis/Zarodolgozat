@@ -5,7 +5,7 @@ namespace GotoStreet_1._0
 {
    public class GotoStreet_Controller
     {
-        private readonly string[] Ok = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
+        private readonly string[] Wheres = { "Munka", "Bevásárlás", "Orvos", "Gyógyszertár" };
         private readonly GotoStreetError error = new GotoStreetError();
         private readonly DateTime Date;
         private readonly string trying;
@@ -15,9 +15,9 @@ namespace GotoStreet_1._0
         private bool CheckTry()
         {
             bool data = false;
-            for (int i = 0; i < Ok.Length; i++)
+            for (int i = 0; i < Wheres.Length; i++)
             {
-                if (trying == Ok[i])
+                if (trying == Wheres[i])
                 { data = true; }
             }
 
@@ -51,11 +51,13 @@ namespace GotoStreet_1._0
             try
             {
                 int Count = 0;
-                var context = new gotoStreetEntities1();
-                foreach (var item in context.gotoStreet)
+                using (var context = new gotoStreetEntities1())
                 {
-                    if (item.userid.Equals(id) && item.go_date.Equals(Date))
-                    { Count++; }
+                    foreach (var item in context.gotoStreet)
+                    {
+                        if (item.userid.Equals(id) && item.go_date.Equals(Date))
+                        { Count++; }
+                    }
                 }
                 if (Count > 0)
                 { error.GotoStreetErrors(); return false; }

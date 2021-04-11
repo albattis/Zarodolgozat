@@ -6,14 +6,9 @@ namespace GotoStreet_1._0
     class PasswordHash
     {
 
-        public string Sha256(string x)
-        {
-            string y = "";
-           y= XSha256(x);
-            return y;
-        }
+        
 
-        private string XSha256(string randomString)
+        public string Sha256(string randomString)
         {
             if (randomString != "")
             {
