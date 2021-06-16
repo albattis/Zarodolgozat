@@ -43,11 +43,6 @@
             this.regisztrációToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regisztrációToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ControlStreetGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hidden_button = new System.Windows.Forms.Button();
             this.Welcome_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +58,11 @@
             this.Button_Authenticated = new System.Windows.Forms.Button();
             this.Authanticated_Data = new System.Windows.Forms.Label();
             this.Search_Button = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ControlStreetMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ControlStreetGridView)).BeginInit();
             this.SuspendLayout();
@@ -109,14 +109,14 @@
             // 
             this.elfogadottKijárásokToolStripMenuItem.Name = "elfogadottKijárásokToolStripMenuItem";
             this.elfogadottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.elfogadottKijárásokToolStripMenuItem.Text = "Elfogadott Kijárások";
+            this.elfogadottKijárásokToolStripMenuItem.Text = "Elfogadott kijárások";
             this.elfogadottKijárásokToolStripMenuItem.Click += new System.EventHandler(this.ElfogadottKijárásokToolStripMenuItem_Click);
             // 
             // elutasitottKijárásokToolStripMenuItem
             // 
             this.elutasitottKijárásokToolStripMenuItem.Name = "elutasitottKijárásokToolStripMenuItem";
             this.elutasitottKijárásokToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.elutasitottKijárásokToolStripMenuItem.Text = "Elutasitott Kijárások";
+            this.elutasitottKijárásokToolStripMenuItem.Text = "Elutasitott kijárások";
             this.elutasitottKijárásokToolStripMenuItem.Click += new System.EventHandler(this.ElutasitottKijárásokToolStripMenuItem_Click);
             // 
             // keresésToolStripMenuItem
@@ -147,7 +147,7 @@
             // 
             this.kijárásiOkAlapjánToolStripMenuItem.Name = "kijárásiOkAlapjánToolStripMenuItem";
             this.kijárásiOkAlapjánToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kijárásiOkAlapjánToolStripMenuItem.Text = "Kijárási Ok alapján";
+            this.kijárásiOkAlapjánToolStripMenuItem.Text = "Kijárási ok alapján";
             this.kijárásiOkAlapjánToolStripMenuItem.Click += new System.EventHandler(this.KijárásiOkAlapjánToolStripMenuItem_Click);
             // 
             // hitelesitésToolStripMenuItem
@@ -189,43 +189,13 @@
             this.ControlStreetGridView.Size = new System.Drawing.Size(545, 150);
             this.ControlStreetGridView.TabIndex = 1;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Név";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Dátum";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Kijárási Ok";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Id";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Státusz";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // Hidden_button
             // 
             this.Hidden_button.Location = new System.Drawing.Point(211, 305);
             this.Hidden_button.Name = "Hidden_button";
             this.Hidden_button.Size = new System.Drawing.Size(227, 27);
             this.Hidden_button.TabIndex = 2;
-            this.Hidden_button.Text = "Táblázat Törlése";
+            this.Hidden_button.Text = "Táblázat üritése";
             this.Hidden_button.UseVisualStyleBackColor = true;
             this.Hidden_button.Click += new System.EventHandler(this.Hidden_button_Click);
             // 
@@ -243,9 +213,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 370);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Keresési Feltételek:";
+            this.label1.Text = "Keresési feltételek:";
             // 
             // idsearch_label
             // 
@@ -300,9 +270,9 @@
             this.Authenticated_label.AutoSize = true;
             this.Authenticated_label.Location = new System.Drawing.Point(525, 305);
             this.Authenticated_label.Name = "Authenticated_label";
-            this.Authenticated_label.Size = new System.Drawing.Size(114, 13);
+            this.Authenticated_label.Size = new System.Drawing.Size(112, 13);
             this.Authenticated_label.TabIndex = 11;
-            this.Authenticated_label.Text = "Felhasználó Hitelesités";
+            this.Authenticated_label.Text = "Felhasználó hitelesités";
             // 
             // labelid
             // 
@@ -335,9 +305,9 @@
             this.Authanticated_Data.AutoSize = true;
             this.Authanticated_Data.Location = new System.Drawing.Point(618, 330);
             this.Authanticated_Data.Name = "Authanticated_Data";
-            this.Authanticated_Data.Size = new System.Drawing.Size(97, 13);
+            this.Authanticated_Data.Size = new System.Drawing.Size(96, 13);
             this.Authanticated_Data.TabIndex = 15;
-            this.Authanticated_Data.Text = "Hitelesitési Adatok:";
+            this.Authanticated_Data.Text = "Hitelesitési adatok:";
             // 
             // Search_Button
             // 
@@ -348,6 +318,36 @@
             this.Search_Button.Text = "Keresés";
             this.Search_Button.UseVisualStyleBackColor = true;
             this.Search_Button.Click += new System.EventHandler(this.Search_Button_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Név";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Dátum";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Kijárási ok";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Id";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Státusz";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // ControlStreetUserboard
             // 
@@ -397,11 +397,6 @@
         private System.Windows.Forms.ToolStripMenuItem dátumAlapjánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kijárásiOkAlapjánToolStripMenuItem;
         private System.Windows.Forms.DataGridView ControlStreetGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button Hidden_button;
         private System.Windows.Forms.Label Welcome_label;
         private System.Windows.Forms.Label label1;
@@ -420,5 +415,10 @@
         private System.Windows.Forms.Button Button_Authenticated;
         private System.Windows.Forms.Label Authanticated_Data;
         private System.Windows.Forms.Button Search_Button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

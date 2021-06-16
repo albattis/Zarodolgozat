@@ -159,11 +159,19 @@ namespace GotoStreet_1._0_ControlStreet
             }
             catch (SqlException) { Authanticated_Data.Text = "Nincs megjelenithető adat."; }
         }
-
+        private void ViewAuthenticated(bool visible)
+        {
+            Authenticated_label.Visible = visible;
+            textBox_Authenticated_id.Visible = visible;
+            labelid.Visible = visible;
+            Search_Button.Visible = visible;
+            Button_Authenticated.Visible = visible;
+            Authanticated_Data.Visible = visible;
+        }
         public ControlStreetUserboard(string[] users)
         {
             InitializeComponent();
-            
+            ViewAuthenticated(false);
             ControlStreetGridView.ColumnCount = 5;
             User = new ControlStreetUser(users);
             Welcome_label.Text = "Üdvözlöm kedves: " + User.Names;
@@ -231,7 +239,9 @@ namespace GotoStreet_1._0_ControlStreet
         {
             GridClear();
            QueryAuthenticated();
+            ViewAuthenticated(true);
             
+
         }
 
         private void Search_Button_Click(object sender, EventArgs e)
@@ -249,6 +259,8 @@ namespace GotoStreet_1._0_ControlStreet
         {
             Authanticated_Procedure();
             User.UserWorkDataWrite("Authanticate");
+            ViewAuthenticated(false);
+            textBox_Authenticated_id.Text = "";
         }
     }
 }

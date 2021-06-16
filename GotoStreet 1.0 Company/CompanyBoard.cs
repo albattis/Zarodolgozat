@@ -55,11 +55,11 @@ namespace GotoStreet_1._0_Company
             if (Certification.IdsControl)
             {
                 Return_label.ForeColor = System.Drawing.Color.Green; Return_label.Text = "Létező ID!";
-                Insert_button.Visible = true;
+                
             }
             else
             {
-                Insert_button.Visible = false;
+               
                 Return_label.ForeColor = System.Drawing.Color.Red; Return_label.Text = "Nem létező ID!";
 
             }
@@ -68,7 +68,8 @@ namespace GotoStreet_1._0_Company
         {
             Certification.IdsControl = false;
             Id_textbox.Text = "";
-            Return_label.Text = "Adatok törölve.";
+            Return_label.Text = "Adatok üritve..";
+           
         }
         private void Insert_button_Click(object sender, EventArgs e)
         {
@@ -88,6 +89,7 @@ namespace GotoStreet_1._0_Company
             if (Certification.Delete_Certification())
             {
                 Mess.DeleteCertification();
+               
             }
         }
     }

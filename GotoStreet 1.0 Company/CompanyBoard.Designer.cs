@@ -45,7 +45,7 @@
             this.Insert_button.Name = "Insert_button";
             this.Insert_button.Size = new System.Drawing.Size(105, 38);
             this.Insert_button.TabIndex = 0;
-            this.Insert_button.Text = "Igény Feltöltése";
+            this.Insert_button.Text = "Igény feltöltése";
             this.Insert_button.UseVisualStyleBackColor = true;
             this.Insert_button.Click += new System.EventHandler(this.Insert_button_Click);
             // 
@@ -55,7 +55,7 @@
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(112, 38);
             this.Delete_button.TabIndex = 1;
-            this.Delete_button.Text = "Adatok Törlése";
+            this.Delete_button.Text = "Adatok üritése";
             this.Delete_button.UseVisualStyleBackColor = true;
             this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
@@ -71,11 +71,11 @@
             // Ids_label
             // 
             this.Ids_label.AutoSize = true;
-            this.Ids_label.Location = new System.Drawing.Point(75, 96);
+            this.Ids_label.Location = new System.Drawing.Point(27, 96);
             this.Ids_label.Name = "Ids_label";
-            this.Ids_label.Size = new System.Drawing.Size(129, 13);
+            this.Ids_label.Size = new System.Drawing.Size(187, 13);
             this.Ids_label.TabIndex = 3;
-            this.Ids_label.Text = "Dolgozó GotoStreet Id-ja :";
+            this.Ids_label.Text = "Dolgozó GotoStreet fehasználóneve: :";
             // 
             // Id_textbox
             // 
@@ -90,7 +90,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Id Ellenőrzése";
+            this.button1.Text = "Ellenőrzés";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 

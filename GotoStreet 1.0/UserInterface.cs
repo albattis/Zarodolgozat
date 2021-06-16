@@ -26,7 +26,7 @@ namespace GotoStreet_1._0
             {
                 if (id.Equals(item.userid) && cheked)
                 {
-                    Authenticated_label.Text = "Hitelesített Felhasználó";
+                    Authenticated_label.Text = "Hitelesített felhasználó";
                     felhasználóiRegisztrációToolStripMenuItem.Visible = false;
                     cheked = false;
 

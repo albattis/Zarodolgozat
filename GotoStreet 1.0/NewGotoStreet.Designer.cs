@@ -85,9 +85,9 @@
             this.Date_label.AutoSize = true;
             this.Date_label.Location = new System.Drawing.Point(105, 187);
             this.Date_label.Name = "Date_label";
-            this.Date_label.Size = new System.Drawing.Size(81, 13);
+            this.Date_label.Size = new System.Drawing.Size(79, 13);
             this.Date_label.TabIndex = 4;
-            this.Date_label.Text = "Kijárás Dátuma:";
+            this.Date_label.Text = "Kijárás dátuma:";
             // 
             // TextBox_Date
             // 
@@ -101,9 +101,9 @@
             this.Go_label.AutoSize = true;
             this.Go_label.Location = new System.Drawing.Point(87, 158);
             this.Go_label.Name = "Go_label";
-            this.Go_label.Size = new System.Drawing.Size(99, 13);
+            this.Go_label.Size = new System.Drawing.Size(97, 13);
             this.Go_label.TabIndex = 6;
-            this.Go_label.Text = "Bejelentés Dátuma:";
+            this.Go_label.Text = "Bejelentés dátuma:";
             // 
             // Go_Label_date
             // 
@@ -119,9 +119,9 @@
             this.Where_label.AutoSize = true;
             this.Where_label.Location = new System.Drawing.Point(119, 221);
             this.Where_label.Name = "Where_label";
-            this.Where_label.Size = new System.Drawing.Size(67, 13);
+            this.Where_label.Size = new System.Drawing.Size(66, 13);
             this.Where_label.TabIndex = 8;
-            this.Where_label.Text = "Kijárás Célja:";
+            this.Where_label.Text = "Kijárás célja:";
             // 
             // TextBox_where
             // 
